@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vit-bhopal---mess-control.web.app/sitemap.xml
