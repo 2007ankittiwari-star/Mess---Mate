@@ -1,0 +1,3199 @@
+<!DOCTYPE html>
+                                       <html lang="en">
+<head>
+  <meta name="google-site-verification" content="KQeAqlqF4Ka1r0fELilktG1uUmuFHNv4ZBnTUxJguJk" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIT Bhopal Mess Menu | Daily Food Updates & Mess Control</title>
+<meta name="description" content="Check today's VIT Bhopal mess menu, food updates, and student feedback. Know what’s being served before you go." />
+<meta name="application-name" content="VIT Bhopal Mess Menu">
+<meta property="og:site_name" content="VIT Bhopal Mess Menu">
+<meta property="og:title" content="VIT Bhopal Mess Menu">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vit-bhopal---mess-control.web.app/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "VIT Bhopal Mess Menu",
+  "url": "https://vit-bhopal---mess-control.web.app/"
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4229208711785901"
+     crossorigin="anonymous"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XEK5V54FNC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XEK5V54FNC');
+</script>     
+
+
+<style>
+  .selected-menu-big-card{
+  padding:18px;
+  border-radius:18px;
+  background:linear-gradient(180deg, #ffffff, #f4fdff);
+  border:1px solid rgba(33,202,185,0.14);
+  box-shadow:var(--shadow-soft);
+}
+.active-meal{
+  transform: scale(1.02);
+  transition: 0.25s;
+}
+
+.selected-menu-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+  flex-wrap:wrap;
+}
+
+#selectedMenuTitle{
+  font-size:18px;
+  font-weight:800;
+  color:#16707b;
+}
+
+#selectedMenuText{
+  margin:0;
+  line-height:1.7;
+  color:#1f4e58;
+  font-weight:600;
+}
+  .meal-popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10000;
+  backdrop-filter:blur(6px);
+}
+
+.meal-popup.hidden{
+  display:none;
+}
+
+.meal-popup-card{
+  width:90%;
+  max-width:420px;
+  background:#fff;
+  border-radius:22px;
+  padding:24px 18px;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+  animation:popupIn 0.3s ease;
+}
+
+.meal-popup-card h2{
+  margin:0 0 8px;
+  color:#16707b;
+}
+
+.popup-time{
+  font-size:13px;
+  color:#5f7a84;
+  margin-bottom:14px;
+  font-weight:600;
+}
+
+.popup-menu-box{
+  background:rgba(33,202,185,0.08);
+  padding:14px;
+  border-radius:14px;
+  margin-bottom:18px;
+  max-height:220px;
+  overflow-y:auto;
+}
+
+.meal-popup-card button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg, #21cab9, #58d7ee);
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+}
+
+@keyframes popupIn{
+  from{
+    transform:scale(0.9);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+  #toastContainer{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:9999;
+}
+
+.toast{
+  min-width:220px;
+  max-width:320px;
+  padding:12px 16px;
+  border-radius:14px;
+  font-weight:600;
+  color:white;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  animation:toastIn 0.3s ease, toastOut 0.3s ease 2.7s forwards;
+}
+
+.toast.error{
+  background:linear-gradient(135deg, #ff5f6d, #ffc371);
+}
+
+.toast.success{
+  background:linear-gradient(135deg, #109e3a, #1faa30);
+}
+
+@keyframes toastIn{
+  from{
+    opacity:0;
+    transform:translateY(20px) scale(0.95);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+@keyframes toastOut{
+  to{
+    opacity:0;
+    transform:translateY(20px) scale(0.95);
+  }
+}
+  .login-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.login-modal.hidden{
+  display:none;
+}
+
+.login-box{
+  background:#fff;
+  padding:25px;
+  border-radius:20px;
+  width:300px;
+  text-align:center;
+}
+
+.login-box input,
+.login-box select{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid rgba(33,202,185,0.25);
+  border-radius:14px;
+  font-size:15px;
+  outline:none;
+  margin-bottom:14px;
+  background:#fff;
+  box-sizing:border-box;
+}
+
+.login-box button{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  background:#21cab9;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+:root{
+  --primary:#21cab9;
+  --primary-dark:#14a89a;
+  --primary-soft:#eafcf9;
+  --accent:#7bdff2;
+  --bg:#f4fbff;
+  --card:#ffffff;
+  --text:#14343f;
+  --muted:#5f7a84;
+  --shadow:0 14px 30px rgba(21, 115, 130, 0.10);
+  --shadow-soft:0 8px 18px rgba(33, 202, 185, 0.10);
+  --radius:22px;
+}
+
+*{box-sizing:border-box;}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(123,223,242,0.24), transparent 28%),
+    radial-gradient(circle at top left, rgba(33,202,185,0.22), transparent 26%),
+    linear-gradient(180deg, #f8feff 0%, #eefbff 100%);
+  min-height:100vh;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  padding:22px 18px 24px;
+  text-align:center;
+  font-size:30px;
+  font-weight:800;
+  letter-spacing:0.4px;
+  color:white;
+  background:
+    linear-gradient(135deg, rgba(33,202,185,0.96), rgba(123,223,242,0.96));
+  box-shadow:0 10px 22px rgba(33, 202, 185, 0.18);
+  border-bottom-left-radius:26px;
+  border-bottom-right-radius:26px;
+}
+
+
+header::after{
+  content:"Fresh menu • Smart feedback • Better experience";
+  display:block;
+  margin-top:8px;
+  font-size:12px;
+  font-weight:600;
+  opacity:0.92;
+  letter-spacing:0.8px;
+}
+
+.container{
+  max-width:760px;
+  margin:0 auto;
+  padding:18px 14px 104px;
+}
+
+.section{
+  display:none;
+}
+
+.active-section{
+  display:block;
+  animation:sectionSlide 0.45s ease;
+}
+
+@keyframes sectionSlide{
+  from{opacity:0; transform:translateY(18px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.card{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,255,255,0.98));
+  padding:18px;
+  margin-bottom:16px;
+  border-radius:var(--radius);
+  border:1px solid rgba(33,202,185,0.12);
+  box-shadow:var(--shadow);
+  transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  animation:cardRise 0.45s ease both;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:5px;
+  background:linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  right:-40px;
+  top:-40px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(123,223,242,0.24), rgba(123,223,242,0.03));
+  pointer-events:none;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 34px rgba(21, 115, 130, 0.14);
+  border-color:rgba(33,202,185,0.25);
+}
+
+@keyframes cardRise{
+  from{opacity:0; transform:translateY(16px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.card h3{
+  margin:0 0 14px;
+  font-size:20px;
+  color:#0f5260;
+}
+
+.card h4{
+  margin:14px 0 8px;
+  color:#16707b;
+}
+
+.card p{
+  margin:10px 0;
+  line-height:1.5;
+}
+
+.card ul{
+  padding-left:20px;
+  margin:8px 0 0;
+}
+
+.card li{
+  margin-bottom:10px;
+  color:#244953;
+}
+
+#menuImage{
+  width:100%;
+  border-radius:18px;
+  border:1px solid rgba(33,202,185,0.15);
+  box-shadow:var(--shadow-soft);
+}
+
+select, textarea, input{
+  width:100%;
+  padding:13px 14px;
+  margin-bottom:12px;
+  border-radius:16px;
+  border:1px solid rgba(33,202,185,0.18);
+  background:rgba(255,255,255,0.95);
+  color:var(--text);
+  outline:none;
+  font-size:15px;
+  transition:border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+select:focus, textarea:focus, input:focus{
+  border-color:rgba(33,202,185,0.5);
+  box-shadow:0 0 0 4px rgba(33,202,185,0.12);
+  transform:translateY(-1px);
+}
+
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+button{
+  position:relative;
+  overflow:hidden;
+  padding:13px 16px;
+  border:none;
+  border-radius:16px;
+  cursor:pointer;
+  width:100%;
+  margin-bottom:8px;
+  color:white;
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:0.2px;
+  background:linear-gradient(135deg, var(--primary), #55d7ee);
+  box-shadow:0 12px 24px rgba(33,202,185,0.18);
+  transition:transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 28px rgba(33,202,185,0.22);
+  filter:saturate(1.05);
+}
+
+button:active{
+  transform:translateY(0);
+}
+
+button::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.28) 35%, transparent 70%);
+  transform:translateX(-130%);
+  transition:transform 0.55s ease;
+}
+
+button:hover::after{
+  transform:translateX(130%);
+}
+
+.stars{
+  display:flex;
+  gap:10px;
+  padding:6px 2px 10px;
+}
+.rating-disabled{
+  opacity:0.5;
+  pointer-events:none;
+}
+
+#submitRatingBtn:disabled{
+  opacity:0.6;
+  cursor:not-allowed;
+  filter:grayscale(0.2);
+}
+.insight-scroll{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  padding:4px 2px 6px;
+  scroll-snap-type:x proximity;
+}
+
+.insight-scroll::-webkit-scrollbar{
+  height:8px;
+}
+
+.insight-scroll::-webkit-scrollbar-thumb{
+  background:rgba(33,202,185,0.28);
+  border-radius:999px;
+}
+
+.insight-card{
+  min-width:220px;
+  max-width:220px;
+  flex:0 0 auto;
+  scroll-snap-align:start;
+  padding:16px;
+  border-radius:18px;
+  background:linear-gradient(180deg, #ffffff, #f4fdff);
+  border:1px solid rgba(33,202,185,0.14);
+  box-shadow:var(--shadow-soft);
+}
+
+.insight-title{
+  font-size:14px;
+  font-weight:700;
+  color:#16707b;
+  margin-bottom:10px;
+}
+
+.insight-value{
+  font-size:18px;
+  font-weight:800;
+  color:#184852;
+  line-height:1.4;
+}
+
+@media (max-width:600px){
+  .insight-card{
+    min-width:200px;
+    max-width:200px;
+  }
+}
+
+.stars span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  font-size:28px;
+  cursor:pointer;
+  color:#b6c8cd;
+  background:linear-gradient(180deg, #ffffff, #f3fbfd);
+  box-shadow:var(--shadow-soft);
+  transition:transform 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.stars span:hover{
+  transform:translateY(-3px) scale(1.05);
+}
+
+.stars .active{
+  color:#ffbf3f;
+  box-shadow:0 10px 20px rgba(255, 191, 63, 0.25);
+  animation:starPop 0.22s ease;
+}
+
+@keyframes starPop{
+  0%{transform:scale(0.9);}
+  100%{transform:scale(1);}
+}
+
+#avgRating, #bestMeal, #activePolls, #previousPoll, #profileDisplay{
+  padding:14px 16px;
+  background:linear-gradient(180deg, rgba(33,202,185,0.08), rgba(123,223,242,0.07));
+  border:1px solid rgba(33,202,185,0.12);
+  border-radius:16px;
+}
+
+#comparison li, #suggestions li, #reviews li{
+  list-style:none;
+  margin-left:-18px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:linear-gradient(180deg, #ffffff, #f6fdff);
+  border:1px solid rgba(33,202,185,0.10);
+  box-shadow:var(--shadow-soft);
+}
+
+#comparison li::before, #suggestions li::before, #reviews li::before{
+  content:"•";
+  color:var(--primary);
+  font-weight:900;
+  margin-right:8px;
+}
+
+
+.menu-slider-wrapper{
+  width:100%;
+  overflow:hidden;
+}
+                                                      
+
+.menu-slider{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:0;
+  margin:0;
+  -webkit-overflow-scrolling:touch;
+}
+
+.menu-slider::-webkit-scrollbar{
+  height:8px;
+}
+
+.menu-slider::-webkit-scrollbar-thumb{
+  background:rgba(33,202,185,0.28);
+  border-radius:999px;
+}
+
+.meal-slide{
+  flex:0 0 100%;
+  max-width:100%;
+  box-sizing:border-box;
+  scroll-snap-align:start;
+  padding:16px;
+  border-radius:18px;
+  background:linear-gradient(180deg, #ffffff, #f4fdff);
+  border:1px solid rgba(33,202,185,0.14);
+  box-shadow:var(--shadow-soft);
+}
+
+
+.meal-slide.active-meal{
+  border-color:rgba(33,202,185,0.38);
+  box-shadow:0 12px 24px rgba(33,202,185,0.18);
+}
+
+.meal-slide-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+
+.meal-slide-title{
+  font-size:17px;
+  font-weight:800;
+  color:#16707b;
+}
+
+.meal-slide-time{
+  font-size:13px;
+  font-weight:700;
+  color:var(--muted);
+  background:rgba(33,202,185,0.08);
+  padding:6px 10px;
+  border-radius:999px;
+}
+
+.meal-slide-menu{
+  margin:0;
+  line-height:1.6;
+  color:#1f4e58;
+  font-weight:600;
+}
+
+@media (max-width:600px){
+  .meal-slide{
+    padding:14px;
+  }
+
+  .meal-slide-title{
+    font-size:16px;
+  }
+
+  .meal-slide-time{
+    font-size:12px;
+  }
+}
+.active-meal .meal-slide-title{
+  color:#0f5260;
+}
+
+.active-meal .meal-slide-time{
+  background:rgba(33,202,185,0.16);
+}
+
+.footer{
+  position:fixed;
+  left:50%;
+  bottom:14px;
+  transform:translateX(-50%);
+  width:min(92%, 760px);
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px;
+  background:rgba(255,255,255,0.82);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(33,202,185,0.16);
+  border-radius:26px;
+  box-shadow:0 18px 30px rgba(14, 91, 103, 0.16);
+  color:var(--muted);
+  z-index:30;
+}
+
+.footer div{
+  flex:1;
+  text-align:center;
+  cursor:pointer;
+  padding:11px 10px;
+  border-radius:16px;
+  font-weight:700;
+  opacity:1;
+  transition:transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.footer div:hover{
+  transform:translateY(-2px);
+  background:rgba(33,202,185,0.08);
+  color:#0e6977;
+}
+
+.footer .active-tab{
+  color:white;
+  background:linear-gradient(135deg, var(--primary), #58d7ee);
+  box-shadow:0 10px 18px rgba(33,202,185,0.22);
+  border-bottom:none;
+}
+
+.footer div:not(:last-child){
+  border-right:none;
+}
+
+#nextServingRow{
+  padding:12px 14px;
+  border-radius:16px;
+  background:linear-gradient(180deg, rgba(123,223,242,0.08), rgba(33,202,185,0.06));
+  border:1px dashed rgba(33,202,185,0.25);
+}
+
+#todayLabel, #currentMenu, #nextServing{
+  color:#1f4e58;
+  font-weight:600;
+}
+
+.card:nth-child(1){animation-delay:0.03s;}
+.card:nth-child(2){animation-delay:0.08s;}
+.card:nth-child(3){animation-delay:0.13s;}
+.card:nth-child(4){animation-delay:0.18s;}
+.card:nth-child(5){animation-delay:0.23s;}
+.card:nth-child(6){animation-delay:0.28s;}
+
+@media (max-width:600px){
+  header{
+    font-size:26px;
+    padding:20px 14px 22px;
+  }
+
+  header::after{
+    font-size:11px;
+  }
+
+  .container{
+    padding:14px 12px 104px;
+  }
+
+  .card{
+    padding:16px;
+    border-radius:20px;
+  }
+
+  .card h3{
+    font-size:18px;
+  }
+
+  .stars{
+    gap:8px;
+    flex-wrap:wrap;
+  }
+
+  .stars span{
+    width:42px;
+    height:42px;
+    font-size:25px;
+  }
+
+  .footer{
+    gap:8px;
+    padding:8px;
+    bottom:10px;
+  }
+
+  .footer div{
+    font-size:13px;
+    padding:10px 6px;
+  }
+  /* POLL SYSTEM */
+
+.poll-question{
+  font-size:18px;
+  font-weight:700;
+  color:#184852;
+  margin-bottom:14px;
+}
+
+.poll-option{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:14px;
+  padding:12px;
+  border:1px solid rgba(33,202,185,0.16);
+  border-radius:16px;
+  background:rgba(255,255,255,0.55);
+}
+
+.poll-option-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.poll-vote-btn{
+  border:none;
+  border-radius:12px;
+  padding:8px 14px;
+  font-weight:700;
+  cursor:pointer;
+  background:linear-gradient(135deg, var(--primary), #58d7ee);
+  color:white;
+}
+
+.poll-bar{
+  width:100%;
+  height:12px;
+  border-radius:999px;
+  background:rgba(33,202,185,0.10);
+  overflow:hidden;
+}
+
+.poll-bar-fill{
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(135deg, var(--primary), #58d7ee);
+}
+
+.poll-meta{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:14px;
+  font-weight:600;
+}
+
+.poll-history-card{
+  padding:12px;
+  border:1px solid rgba(33,202,185,0.14);
+  border-radius:14px;
+  margin-bottom:12px;
+  background:rgba(255,255,255,0.55);
+}
+
+.poll-history-card h4{
+  margin:0 0 8px;
+  color:#184852;
+}
+
+.poll-closed{
+  display:inline-block;
+  margin-top:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(33,202,185,0.10);
+  color:#0e6977;
+  font-size:13px;
+  font-weight:700;
+}
+}
+/* Soft Login Modal */
+
+.login-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(8,20,28,0.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  backdrop-filter:blur(6px);
+  padding:20px;
+}
+
+.login-modal.hidden{
+  display:none;
+}
+
+.login-box{
+  width:100%;
+  max-width:380px;
+  background:rgba(255,255,255,0.95);
+  border-radius:24px;
+  padding:28px 22px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.18);
+  text-align:center;
+  animation:popIn 0.25s ease;
+}
+
+.login-emoji{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.login-box h2{
+  margin:0 0 8px;
+  color:#184852;
+  font-size:24px;
+}
+
+.login-subtext{
+  margin:0 0 18px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+}
+
+.login-box input{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid rgba(33,202,185,0.25);
+  border-radius:14px;
+  font-size:15px;
+  outline:none;
+  margin-bottom:14px;
+  background:#fff;
+  box-sizing:border-box;
+}
+
+.login-box input:focus,
+.login-box select:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(33,202,185,0.10);
+}
+
+.login-box button{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  padding:12px 16px;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
+  color:#fff;
+  background:linear-gradient(135deg, var(--primary), #58d7ee);
+  box-shadow:0 10px 22px rgba(33,202,185,0.22);
+}
+
+.login-box button:hover{
+  transform:translateY(-1px);
+}
+
+@keyframes popIn{
+  from{
+    opacity:0;
+    transform:scale(0.94) translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:scale(1) translateY(0);
+  }
+}
+</style>
+
+</head>
+
+<body>
+<header>VIT Bhopal Mess Menu
+  <p id="userDisplay" style="font-size:14px; margin-top:4px;"></p>
+</header>
+
+<div class="container">
+
+<div id="home" class="section active-section">
+
+  <div class="card">
+    <h3>Select Mess</h3>
+    <select id="mess" onchange="updateMenu()">
+      <option value="">--Select Mess--</option>
+    </select>
+  </div>
+
+  <div class="card">
+    <h3>Today's Menu</h3>
+
+    <button id="viewMenuBtn" style="display:none;" onclick="toggleMenuFinder()">Browse Meals 🍽️</button>
+    <!-- FULL MENU BUTTON -->
+    
+    
+
+    <!-- IMAGE DISPLAY -->
+    <div id="menuImageContainer" style="display:none; margin-top:10px;">
+      <img id="menuImage" style="width:100%; border-radius:10px;">
+    </div>
+    <div id="menuFinderCard" class="card" style="display:none; margin-top:12px;">
+    <h3>Select Day & Meal</h3>
+
+    <select id="menuDaySelect" onchange="renderSelectedMenuCard()">
+      <option value="">-- Select Day --</option>
+    </select>
+
+    <select id="menuMealSelect" onchange="renderSelectedMenuCard()">
+      <option value="">-- Select Meal --</option>
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="snacks">Snacks</option>
+      <option value="dinner">Dinner</option>
+    </select>
+
+    <div id="selectedMenuDisplay" style="display:none; margin-top:12px;">
+      <div class="selected-menu-big-card">
+        <div class="selected-menu-head">
+          <span id="selectedMenuTitle">Menu</span>
+        </div>
+        <p id="selectedMenuText">-</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- existing slider / today's menu UI continues -->
+
+
+    <p><b>Today:</b> <span id="todayLabel">-</span></p>
+
+<div class="menu-slider-wrapper">
+  <div id="menuSlider" class="menu-slider">
+    <div class="meal-slide" id="slide-breakfast">
+      <div class="meal-slide-head">
+        <span class="meal-slide-title">Breakfast🍞</span>
+        <span class="meal-slide-time" id="time-breakfast">7:30 AM - 9:15 AM</span>
+      </div>
+      <p class="meal-slide-menu" id="menu-breakfast">-</p>
+    </div>
+
+    <div class="meal-slide" id="slide-lunch">
+      <div class="meal-slide-head">
+        <span class="meal-slide-title">Lunch🥗</span>
+        <span class="meal-slide-time" id="time-lunch">12:15 PM - 2:30 PM</span>
+      </div>
+      <p class="meal-slide-menu" id="menu-lunch">-</p>
+    </div>
+
+    <div class="meal-slide" id="slide-snacks">
+      <div class="meal-slide-head">
+        <span class="meal-slide-title">Snacks🍩</span>
+        <span class="meal-slide-time" id="time-snacks">5:00 PM - 6:30 PM</span>
+      </div>
+      <p class="meal-slide-menu" id="menu-snacks">-</p>
+    </div>
+
+    <div class="meal-slide" id="slide-dinner">
+      <div class="meal-slide-head">
+        <span class="meal-slide-title">Dinner🍚</span>
+        <span class="meal-slide-time" id="time-dinner">7:30 PM - 9:30 PM</span>
+      </div>
+      <p class="meal-slide-menu" id="menu-dinner">-</p>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="card">
+  <h3>Quick Insights 📊</h3>
+  <div id="insightCards" class="insight-scroll">
+    <div class="insight-card">
+      <div class="insight-title">Best Breakfast</div>
+      <div class="insight-value" id="bestBreakfastCard">No data yet</div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-title">Best Lunch</div>
+      <div class="insight-value" id="bestLunchCard">No data yet</div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-title">Worst Dinner</div>
+      <div class="insight-value" id="worstDinnerCard">No data yet</div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-title">Trending Food</div>
+      <div class="insight-value" id="trendingFoodCard">No data yet</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div id="rate" class="section">
+
+  <div class="card">
+  <h3>Rate Meal Wise⭐</h3>
+
+  <p><b>Selected Meal:</b> <span id="selectedMealText">Breakfast</span></p>
+
+  <select id="mealType" onchange="changeMealType()">
+    <option value="breakfast">Breakfast</option>
+    <option value="lunch">Lunch</option>
+    <option value="snacks">Snacks</option>
+    <option value="dinner">Dinner</option>
+  </select>
+
+  <div class="stars" id="stars">
+    <span onclick="setRating(1)">★</span>
+    <span onclick="setRating(2)">★</span>
+    <span onclick="setRating(3)">★</span>
+    <span onclick="setRating(4)">★</span>
+    <span onclick="setRating(5)">★</span>
+  </div>
+
+  <p>Rating: <span id="ratingValue">0</span>/5</p>
+<button id="submitRatingBtn" onclick="submitRating()">Submit Rating</button>
+<p id="ratingRestrictionMsg" style="display:none; color:#ff8c42; font-weight:700; margin-top:8px;">
+  You can only rate your allotted mess.
+</p>
+
+
+</div>
+
+  <div class="card">
+    <h3>Week's Best Meal👍</h3>
+    <p id="bestMeal">No data yet</p>
+  </div>
+
+  <div class="card">
+    <h3>Write Review🗣️</h3>
+    <textarea id="reviewText"></textarea>
+    <button onclick="addReview()">Submit</button>
+    <ul id="reviews"></ul>
+  </div>
+  <div class="card">
+    <h3>Food Suggestion🤔</h3>
+    <input type="text" id="suggestionInput" placeholder="Suggest a food item...">
+    <button onclick="addSuggestion()">Submit Suggestion</button>
+    <h4>Top Suggestions:</h4>
+    <ul id="suggestions"></ul>
+  </div>
+
+</div>
+
+<div id="poll" class="section">
+  <div class="card">
+    <h3>Active Poll</h3>
+    <div id="activePolls"></div>
+  </div>
+
+  <div class="card">
+    <h3>Previous Polls</h3>
+    <div id="previousPoll"></div>
+  </div>
+</div>
+
+<div id="about" class="section">
+  <div class="card">
+    <h3>User Profile</h3>
+
+    <div id="profileForm">
+      <input id="username" placeholder="Enter your name">
+      <input id="userCollege" placeholder="Enter College Name">
+      <input id="userMess" placeholder="Enter Mess Name">
+      <input id="userHostel" placeholder="Enter Hostel Block">
+      <button onclick="saveProfile()">Save</button>
+    </div>
+
+    <div id="profileDisplay" style="display:none;"></div>
+    <button id="editBtn" style="display:none;" onclick="editProfile()">Edit Profile</button>
+  </div>
+
+  <div class="card">
+    <h3>Contact Us</h3>
+    <p>Email: support@messapp.com</p>
+    <p>Contact : 9654216892</p>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div onclick="showSection('home',this)">Home</div>
+  <div onclick="showSection('rate',this)">Rate</div>
+  <div onclick="showSection('poll',this)">Poll</div>
+  <div onclick="showSection('about',this)">About</div>
+</div>
+
+
+
+<script>
+function showSection(id,el) {
+  document.querySelectorAll(".section").forEach(s => {
+    s.classList.remove("active-section");
+    s.style.display = "none";
+  });
+
+  document.getElementById(id).style.display = "block";
+  document.getElementById(id).classList.add("active-section");
+
+  document.querySelectorAll(".footer div").forEach(t => t.classList.remove("active-tab"));
+  if(el) el.classList.add("active-tab");
+}
+
+const data = {
+  "Mayuri": {
+  Monday: {
+    breakfast: "Idli, Vada, Sambhar, Chutney, Banana, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Tawa Roti, Jeera Aloo/Sev Tamatar, Dal Fry, Butter Milk, Mix Salad, Plain Rice North & South, More Kuzhambu, Raw Banana Poriyal, Pepper Rasam, Pickle",
+    snacks: "Kachori, Tamarind Chutney, Tea/Milk/Coffee",
+    dinner: "Butter Roti/Plain Roti, Kadhai Mix Veg, Egg Gravy, Veg Poriyal, Plain Rice North & South, Tomato Rasam, Yellow Dal, Rice Kheer"
+  },
+
+  Tuesday: {
+    breakfast: "Poha, Jalebi, Pongal, Chutney, Jeera Naan, Mix Cutfruit, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Puri, White Channa (Medium Spicy), Mix Dal, Mix Salad, Plain Rice North & South, Bottle Gourd Kuzhambu, Tomato Rasam, Butter Milk/Juice, Pickle",
+    snacks: "Variety of Samosa (Aloo Gobhi/Matra), Red Sauce, Green Chutney, Tea/Coffee/Milk",
+    dinner: "Butter Roti/Plain Roti, Fruit Custard, Veg Jalfrezi/Soya Badi Masala, Dal Tadka, Plain Rice North & South, Pepper Rasam, Pickle"
+  },
+
+  Wednesday: {
+    breakfast: "Pav Bhaji, Upma, Chutney, Sprouts, Banana, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti, Veg Kofta, Dal Tadka, Mutter Pulao, Fryums, Sweet Boondi, Plain Rice South, Vegetable Sambar, Paruppu Rasam, Pickle",
+    snacks: "Cutlet 2 Nos, Red Chilli Sauce, Tea/Coffee/Milk",
+    dinner: "Butter Roti, Paneer Masala (Less Oil & Spices), Kadai Chicken Masala (Less Oil & Spices), Plain Dal, Plain Rice North & South, Ingi Rasam, Pickle"
+  },
+
+  Thursday: {
+    breakfast: "Aloo Paratha, Dahi, Banana, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Rajma, Jeera Rice, Seasonal Veg, Mixed Veg Salad, Rice Plain, Veg Sambar, Beetroot Poriyal, Rasam, Pickle",
+    snacks: "Noodles/Fried Idli, Sauce/Coconut Chutney, Tea/Coffee/Milk",
+    dinner: "Butter Roti, Plain, Egg Gravy, Green Peas Masala, Dal Fry, Jeera Rice, Sooji Halwa, Pepper Rasam, Pickle"
+  },
+
+  Friday: {
+    breakfast: "Onion Uthappam, Onion Tomato Chutney, Sprouts, Fruit Salad, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Kadi Pakoda, Dal Fry, Plain Rice, Mix Salad, Plain Rice South, Brinjal Kuzhambu, Veg Aviyal, Beetroot Poriyal, Pickle",
+    snacks: "Vada Pav, Green Chutney, Tea/Coffee/Milk",
+    dinner: "Plain Roti, Tandoori Butter Chicken Gravy, Kadai Paneer, Dal Tadka Medium Spicy, Plain Rice North & South, Puli Rasam (Tamarind), Pickle"
+  },
+
+  Saturday: {
+    breakfast: "Chole with Lemon Slice, Bhature, Mix Cut Fruit, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Aloo Hara Matar/Gilki Masala, Ghee Rice, Dal Makhni, Plain Rice South, Potato Kara Poriyal, Butter Milk, Mix Veg Sambar, Rasam, Pickle",
+    snacks: "Bread Pakoda, Red Tomato Chutney, Tea/Coffee/Milk",
+    dinner: "Plain Roti, Veg Pulao, Lobia Gravy (Chawli), Toor Dal Fry, Plain Rice South, Paruppu Rasam, Pickle"
+  },
+
+  Sunday: {
+    breakfast: "Masala Dosa/Mix Veg Dosa, Sambhar, Chutney, Sprouts, Banana, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Veg Biryani, Butter Paneer Masala, Chicken Biryani (Limited Pieces), Onion Raita, Dal Kolhapuri, Pickle",
+    snacks: "Pasta White/Red Sauce, Sauce/Chutney, Tea/Coffee/Milk",
+    dinner: "Roti, Aloo White Peas Masala, Dal Makhani, Plain Rice North & South, Carrot Poriyal, Cabbage Poriyal, Paruppu Rasam (Pulses), Veg Sorba Soup, Gulab Jamun"
+  }
+},
+  "Safal": {
+  Monday: {
+    breakfast: "Idli, Vada, Sambhar, Chutney, Banana, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Tawa Roti, Jeera Aloo/Sev Tamatar, Dal Fry, Butter Milk, Mix Salad, Plain Rice North & South, More Kuzhambu, Raw Banana Poriyal, Pepper Rasam, Pickle",
+    snacks: "Kachori, Tamarind Chutney, Tea/Milk/Coffee",
+    dinner: "Butter Roti/Plain Roti, Kadhai Mix Veg, Egg Gravy, Veg Poriyal, Plain Rice North & South, Tomato Rasam, Yellow Dal, Rice Kheer"
+  },
+
+  Tuesday: {
+    breakfast: "Poha, Jalebi, Pongal, Chutney, Jeera Naan, Mix Cutfruit, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Puri, White Channa (Medium Spicy), Mix Dal, Mix Salad, Plain Rice North & South, Bottle Gourd Kuzhambu, Tomato Rasam, Butter Milk/Juice, Pickle",
+    snacks: "Variety of Samosa (Aloo Gobhi/Matra), Red Sauce, Green Chutney, Tea/Coffee/Milk",
+    dinner: "Butter Roti/Plain Roti, Fruit Custard, Veg Jalfrezi/Soya Badi Masala, Dal Tadka, Plain Rice North & South, Pepper Rasam, Pickle"
+  },
+
+  Wednesday: {
+    breakfast: "Pav Bhaji, Upma, Chutney, Sprouts, Banana, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti, Veg Kofta, Dal Tadka, Mutter Pulao, Fryums, Sweet Boondi, Plain Rice South, Vegetable Sambar, Paruppu Rasam, Pickle",
+    snacks: "Cutlet 2 Nos, Red Chilli Sauce, Tea/Coffee/Milk",
+    dinner: "Butter Roti, Paneer Masala (Less Oil & Spices), Kadai Chicken Masala (Less Oil & Spices), Plain Dal, Plain Rice North & South, Ingi Rasam, Pickle"
+  },
+
+  Thursday: {
+    breakfast: "Aloo Paratha, Dahi, Banana, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Rajma, Jeera Rice, Seasonal Veg, Mixed Veg Salad, Rice Plain, Veg Sambar, Beetroot Poriyal, Rasam, Pickle",
+    snacks: "Noodles/Fried Idli, Sauce/Coconut Chutney, Tea/Coffee/Milk",
+    dinner: "Butter Roti, Plain, Egg Gravy, Green Peas Masala, Dal Fry, Jeera Rice, Sooji Halwa, Pepper Rasam, Pickle"
+  },
+
+  Friday: {
+    breakfast: "Onion Uthappam, Onion Tomato Chutney, Sprouts, Fruit Salad, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Kadi Pakoda, Dal Fry, Plain Rice, Mix Salad, Plain Rice South, Brinjal Kuzhambu, Veg Aviyal, Beetroot Poriyal, Pickle",
+    snacks: "Vada Pav, Green Chutney, Tea/Coffee/Milk",
+    dinner: "Plain Roti, Tandoori Butter Chicken Gravy, Kadai Paneer, Dal Tadka Medium Spicy, Plain Rice North & South, Puli Rasam (Tamarind), Pickle"
+  },
+
+  Saturday: {
+    breakfast: "Chole with Lemon Slice, Bhature, Mix Cut Fruit, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Aloo Hara Matar/Gilki Masala, Ghee Rice, Dal Makhni, Plain Rice South, Potato Kara Poriyal, Butter Milk, Mix Veg Sambar, Rasam, Pickle",
+    snacks: "Bread Pakoda, Red Tomato Chutney, Tea/Coffee/Milk",
+    dinner: "Plain Roti, Veg Pulao, Lobia Gravy (Chawli), Toor Dal Fry, Plain Rice South, Paruppu Rasam, Pickle"
+  },
+
+  Sunday: {
+    breakfast: "Masala Dosa/Mix Veg Dosa, Sambhar, Chutney, Sprouts, Banana, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Veg Biryani, Butter Paneer Masala, Chicken Biryani (Limited Pieces), Onion Raita, Dal Kolhapuri, Pickle",
+    snacks: "Pasta White/Red Sauce, Sauce/Chutney, Tea/Coffee/Milk",
+    dinner: "Roti, Aloo White Peas Masala, Dal Makhani, Plain Rice North & South, Carrot Poriyal, Cabbage Poriyal, Paruppu Rasam (Pulses), Veg Sorba Soup, Gulab Jamun"
+  }
+},
+"Anchor": {
+  Monday: {
+    breakfast: "Idli, Vada, Sambhar, Chutney, Banana, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Tawa Roti, Jeera Aloo/Sev Tamatar, Dal Fry, Butter Milk, Mix Salad, Plain Rice North & South, More Kuzhambu, Raw Banana Poriyal, Pepper Rasam, Pickle",
+    snacks: "Kachori, Tamarind Chutney, Tea/Milk/Coffee",
+    dinner: "Butter Roti/Plain Roti, Kadhai Mix Veg, Egg Gravy, Veg Poriyal, Plain Rice North & South, Tomato Rasam, Yellow Dal, Rice Kheer"
+  },
+
+  Tuesday: {
+    breakfast: "Poha, Jalebi, Pongal, Chutney, Jeera Naan, Mix Cutfruit, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Puri, White Channa (Medium Spicy), Mix Dal, Mix Salad, Plain Rice North & South, Bottle Gourd Kuzhambu, Tomato Rasam, Butter Milk/Juice, Pickle",
+    snacks: "Variety of Samosa (Aloo Gobhi/Matra), Red Sauce, Green Chutney, Tea/Coffee/Milk",
+    dinner: "Butter Roti/Plain Roti, Fruit Custard, Veg Jalfrezi/Soya Badi Masala, Dal Tadka, Plain Rice North & South, Pepper Rasam, Pickle"
+  },
+
+  Wednesday: {
+    breakfast: "Pav Bhaji, Upma, Chutney, Sprouts, Banana, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti, Veg Kofta, Dal Tadka, Mutter Pulao, Fryums, Sweet Boondi, Plain Rice South, Vegetable Sambar, Paruppu Rasam, Pickle",
+    snacks: "Cutlet 2 Nos, Red Chilli Sauce, Tea/Coffee/Milk",
+    dinner: "Butter Roti, Paneer Masala (Less Oil & Spices), Kadai Chicken Masala (Less Oil & Spices), Plain Dal, Plain Rice North & South, Ingi Rasam, Pickle"
+  },
+
+  Thursday: {
+    breakfast: "Aloo Paratha, Dahi, Banana, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Rajma, Jeera Rice, Seasonal Veg, Mixed Veg Salad, Rice Plain, Veg Sambar, Beetroot Poriyal, Rasam, Pickle",
+    snacks: "Noodles/Fried Idli, Sauce/Coconut Chutney, Tea/Coffee/Milk",
+    dinner: "Butter Roti, Plain, Egg Gravy, Green Peas Masala, Dal Fry, Jeera Rice, Sooji Halwa, Pepper Rasam, Pickle"
+  },
+
+  Friday: {
+    breakfast: "Onion Uthappam, Onion Tomato Chutney, Sprouts, Fruit Salad, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Kadi Pakoda, Dal Fry, Plain Rice, Mix Salad, Plain Rice South, Brinjal Kuzhambu, Veg Aviyal, Beetroot Poriyal, Pickle",
+    snacks: "Vada Pav, Green Chutney, Tea/Coffee/Milk",
+    dinner: "Plain Roti, Tandoori Butter Chicken Gravy, Kadai Paneer, Dal Tadka Medium Spicy, Plain Rice North & South, Puli Rasam (Tamarind), Pickle"
+  },
+
+  Saturday: {
+    breakfast: "Chole with Lemon Slice, Bhature, Mix Cut Fruit, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Aloo Hara Matar/Gilki Masala, Ghee Rice, Dal Makhni, Plain Rice South, Potato Kara Poriyal, Butter Milk, Mix Veg Sambar, Rasam, Pickle",
+    snacks: "Bread Pakoda, Red Tomato Chutney, Tea/Coffee/Milk",
+    dinner: "Plain Roti, Veg Pulao, Lobia Gravy (Chawli), Toor Dal Fry, Plain Rice South, Paruppu Rasam, Pickle"
+  },
+
+  Sunday: {
+    breakfast: "Masala Dosa/Mix Veg Dosa, Sambhar, Chutney, Sprouts, Banana, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti Plain, Veg Biryani, Butter Paneer Masala, Chicken Biryani (Limited Pieces), Onion Raita, Dal Kolhapuri, Pickle",
+    snacks: "Pasta White/Red Sauce, Sauce/Chutney, Tea/Coffee/Milk",
+    dinner: "Roti, Aloo White Peas Masala, Dal Makhani, Plain Rice North & South, Carrot Poriyal, Cabbage Poriyal, Paruppu Rasam (Pulses), Veg Sorba Soup, Gulab Jamun"
+  }
+},
+
+  "Rassense": {
+  Monday: {
+    breakfast: "Idli, Sambhar, Chutney, Banana, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Tawa Roti, Aloo Mutter Rassa, Dal Fry, Buttermilk, Mix Salad, Tomato Rice, More Kuzhambu, Raw Banana Poriyal, Pepper Rasam, Pickle, Plain Rice",
+    snacks: "Bhelpuri, Tea/Milk/Coffee",
+    dinner: "Butter Roti / Plain Roti, Kadhai Mix Veg, Egg Gravy, Multi Grain Khichadi, Yellow Dhal, Plain Rice (North & South), Tomato Rasam, Rice Kheer"
+  },
+
+  Tuesday: {
+    breakfast: "Poha, Pongal Chutney, Jeera Man, Mix Cutfruit Salad, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti, White Channa (M. Spicy), Mix Dal, Mix Salad, Mint Rice, Plain Rice, Bottle Gourd Kootu, Garlic Kuzhambu, Tomato Rasam, Buttermilk / Juice, Pickle",
+    snacks: "Dahi Vada / Fried Idli, Tea/Coffee/Milk",
+    dinner: "Butter Roti / Plain Roti, Fruit Custard, Mix Veg Sabji, Dal Tadka, Plain Rice (North & South), Pepper Rasam, Pickle"
+  },
+
+  Wednesday: {
+    breakfast: "Pav Bhaji, Upma, Chutney, Sprouts, Banana, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti, Lobia Masala, Dal Tadka, Mutter Pulao, Fryums, Sweet Boondi, South Indian Plain Rice, Reddish Sambhar, Veg Poriyal, Paruppu Rasam, Pickle",
+    snacks: "Panipuri, Tea/Coffee/Milk",
+    dinner: "Butter Roti, Paneer Masala (Oil, L. Spicy), Kadai Chicken Masala (Oil, L. Spicy), Plain Dal, Plain Rice (North & South), Ingi Rasam, Pickle, Butter Roti"
+  },
+
+  Thursday: {
+    breakfast: "Rava Khichdi, Pongal, Tomato Chutney, Onion Chutney, Banana, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti - Plain, Rajma, Jeera Rice, Seasonal Veg, Onion, Mixed Veg Salad, Rice - Plain, Veg Sambhar, Beetroot Poriyal, Rasam, Pickle",
+    snacks: "Noodles, Fried Idli, Sauce / Coconut Chutney, Tea/Coffee/Milk",
+    dinner: "Butter Roti, Plain, Egg Gravy, Green Peas Masala, Dal Fry, Jeera Rice, Sooji Halwa, Paper Rasam, Pickle"
+  },
+
+  Friday: {
+    breakfast: "Daliya, Poha, Onion Tomato Chutney, Sprouts, Fruit Salad, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti - Plain, Louki Channa, Dal Fry, Plain Rice, Mix Salad, South Indian Plain Rice, Brinjal Kuzhambu, Veg Aviyal, Pickle, Lemon Rasam",
+    snacks: "Channa Sundal, Tea/Coffee/Milk",
+    dinner: "Plain Roti, Plain Chicken Gravy, Kadai Paneer, Dal Tadka - Medium Spicy, Plain Rice (North & South), Puli Rasam (Tamarind), Pickle"
+  },
+
+  Saturday: {
+    breakfast: "Vermicelli, Upma, Chutney, Sambar, Mix Cutfruit Salad, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Roti - Plain, Aloo Palak, Ghee Rice, Garlic Dal, South Indian Plain Rice, Potato Kara Poriyal, Buttermilk, Mix Veg Sambar, Rasam, Pickle",
+    snacks: "Sweet Corn Salad, Tea/Coffee/Milk",
+    dinner: "Plain Roti, Veg Pulao, Lobia Gravy, Thoor Dal Fry, South Indian Plain Rice, Paruppu Rasam, Pickle"
+  },
+
+  Sunday: {
+    breakfast: "Uthappam, Sambar, Chutney, Sprouts, Banana, Boiled Egg, Bread, Butter Jam, Tea/Milk/Coffee",
+    lunch: "Veg Biryani, Chicken Biryani, Butter Paneer Masala, Dal Kolhapuri, Onion Raita, Pickle",
+    snacks: "White Sauce Pasta, Tea/Coffee/Milk",
+    dinner: "Roti, Aloo White Peas Masala, Dal Tadka, South Indian Plain Rice, Sambar, Paruppu Rasam (Pulses), Veg Sorba Soup, Halwa"
+  }
+},
+  "Jain Mess": {
+  Monday: {
+    breakfast: "Poha, Mint Curd, Fruit, Bread, Butter Jam, Milk, Tea, Coffee",
+    lunch: "Butter Roti, Kadi Pakoda, Seasonal Veg, Dal Fry, Salad, Fryums, Pickle",
+    snacks: "Noodles - Medium, Green Chutney, Milk, Tea, Coffee",
+    dinner: "Shahi Paneer, Punjabi Dum Aloo, Veg Pulao, Dal Fry, Tawa Roti, Pickle, Shahi Tukda"
+  },
+
+  Tuesday: {
+    breakfast: "Plain Paratha, Mint Curd / Aloo Matar Gravy, Sprouts Salad, Fruit/Banana, Bread, Butter Jam, Milk, Tea, Coffee",
+    lunch: "Poori, Punjabi Chole, Ghee Rice, Dal Tadka, Punjabi Khada Salad, Fryums, Kesari Kheer, Pickle",
+    snacks: "Sandwich, Ketchup/Chutney, Milk, Tea, Coffee",
+    dinner: "Methi Matar Malai, Plain Rice, Dry Bhindi Masala/Brinjal, Dal Yellow, Jeera Roti, Pickle"
+  },
+
+  Wednesday: {
+    breakfast: "Poori, Aloo Jhole Wala, Fruit, Bread, Butter Jam, Milk, Tea, Coffee",
+    lunch: "Tawa Roti, Jeera Aloo, Hari Mirch Dal Tadka, Steam Rice, Fresh Salad with Onion, Khajoor Ki Launji, Tadke Wala Dahi",
+    snacks: "Samosa, Mint Chutney, Milk, Tea, Coffee",
+    dinner: "Corriender Roti, Dal Hari Mirch, Seasonal Veg, Rajma Masala, Matar Pulao, Fresh Salad, Veg Nuggets, Potato Wedges"
+  },
+
+  Thursday: {
+    breakfast: "Variety Uthappam, Sambhar, Chutney, Fruit, Bread, Butter Jam, Milk, Tea, Coffee",
+    lunch: "Tadke Wali Chach, Gatte Ki Sabji, Veg Pulao, Navratan Dal, White Rice, Sada Bati, Churma, Chutney, Papad Churi",
+    snacks: "Vada Pao, Fried Green Chilli / Green Chutney, Milk, Tea, Coffee",
+    dinner: "Tawa Roti, Dahi Aaloo Tikki Fried, Jeera Rice, Dal Tadka, Pickle, Fresh Salad, Mutter Paneer"
+  },
+
+  Friday: {
+    breakfast: "Masala Dosa, Sambhar, Assorted Chutney, Fruit, Bread, Butter Jam, Milk, Tea, Coffee",
+    lunch: "Roti, Aloo Matar Masala, Chole Masala, Veg Pulao, Fry Dal, Juice/Buttermilk, Pickle, Fresh Salad",
+    snacks: "Veg Cutlet, Chutney, Milk, Tea, Coffee",
+    dinner: "Seasonal Veg, Aloo Soya Masala, Plain Rice, Dal Makhani, Tawa Roti, Pickle"
+  },
+
+  Saturday: {
+    breakfast: "Chole Bhature, Lemon Pieces, Fruit/Banana, Bread, Butter Jam, Milk, Tea, Coffee",
+    lunch: "Tawa Roti, Mix Veg, Rajma Masala, Jeera Rice, Hari Mirch Dal Tadka, Boondi Raita, Pickle, Fryums",
+    snacks: "Bhel Puri, Milk, Tea, Coffee",
+    dinner: "Sev Tamatar Gravy, Besan, Kuska Rice, Dal Tadka, Methi Chapathi, Pickle"
+  },
+
+  Sunday: {
+    breakfast: "Idli, Vada, Sambhar, Assorted Chutney, Fruit, Bread, Butter Jam, Milk, Tea, Coffee",
+    lunch: "Roti, Chawla Gravy, Veg Biryani, Salad, Onion Raita, Pickle, Veg Jalfrezi",
+    snacks: "Variety Sauce Pasta, Milk, Tea, Coffee",
+    dinner: "Tawa Roti, Kadhai Paneer, Seasonal Veg, Dal Tadka, Jeera Rice, Fresh Salad with Onion, Pickle, Gulab Jamun/Pineapple Halwa"
+  }
+},
+
+"Girls Hostel Block-1": {
+  Sunday: {
+    breakfast: "Plain Dosa, Aloo Masala, Sambar, Chutney, Watermelon, Bread, Butter, Jam, Milk, Tea, Coffee",
+    lunch: "Chapathi, Masala Dal, Chicken Dum Biryani, Onion Raita, Vegetable Biryani, Plain Rice, Rasam, Lemon Juice, Fryums, Pickle",
+    snacks: "Bhel Poori / Dahi Vada, Spring Roll (once a month), Milk, Tea, Coffee",
+    dinner: "Butter Roti, Dal Makhani, Jeera Rice, Dum Aloo Masala, Plain Rice, Rasam, Gulab Jamun, Pickle"
+  },
+
+  Monday: {
+    breakfast: "Idly, Urad Vada, Sambar, Coconut Chutney, Banana, Boiled Egg, Bread, Butter, Jam, Milk, Tea, Coffee",
+    lunch: "Chapati, Plain Rice, Kushka Rice, Soyabean Masala, Pakoda Kuzhambu, Dal, Sambar, Rasam, Salad, Curd",
+    snacks: "Masala Bun / Aloo Masala Sandwich, Milk, Tea, Coffee",
+    dinner: "Phulka, Besan Ka Gatta, Tamarind Rice, Plain Rice, Masala Dal, Paneer Bhurji, Egg Bhurji, Rasam, Pickle"
+  },
+
+  Tuesday: {
+    breakfast: "Aloo Paratha, Curd, Sprouts, Papaya, Bread, Butter, Jam, Milk, Tea, Coffee",
+    lunch: "Chapati, Chole Masala, Plain Rice, Dal Tadka, Kara Kuzhambu / Aviyal, Rasam, Watermelon Juice, Salad, Papad, Pickle, Boondi",
+    snacks: "Pasta / Noodles, Milk, Tea, Coffee",
+    dinner: "Coriander Chapati, Kadhi Pakoda, Plain Rice, Plain Dal, Kushka Masala, Rasam, Sooji Halwa / Custard Sweet, Pickle"
+  },
+
+  Wednesday: {
+    breakfast: "Poha, Jalebi, Sev, Pongal, Sambar, Banana, Bread, Butter, Jam, Milk, Tea, Coffee",
+    lunch: "Phulka, Chawli Masala, Plain Rice, Moong Dal, Mix Veg Poriyal, Rasam, Fryums, Tossed Salad, Curd Rice, Pickle",
+    snacks: "Chana Chat / Pani Poori, Milk, Tea, Coffee",
+    dinner: "Phulka, Dal Tadka, Paneer Pasantha, Kadhai Chicken, Plain Rice, Dal Fry, Curd, Pickle"
+  },
+
+  Thursday: {
+    breakfast: "Pav Bhaji, Rava Veg Khichdi, Boiled Egg, Watermelon, Bread, Butter, Jam, Milk, Tea, Coffee",
+    lunch: "Phulka, Gobi Fry / Kala Chana, Plain Rice, Palak Dal, Veg Pulao, Sambar, Rasam, Poriyal, Papad, Curd",
+    snacks: "Veg Puff (Sweet Sauce) / Corn Masala, Milk, Tea, Coffee",
+    dinner: "Methi Chapathi, Lauki Chana / Veg Jalfrezi, Plain Rice, Aloo Jeera, Rasam, Pickle"
+  },
+
+  Friday: {
+    breakfast: "Veg Uthappam, Sambar, Tomato Chutney / Kara Chutney, Banana, Bread, Butter, Jam, Milk, Tea, Coffee",
+    lunch: "Phulka, Rajma Masala, Plain Rice, Koottu / Mor Kuzhambu, Aloo Fry, Mint Rice / Tomato Rice, Rasam, Semiya / Rice Kheer, Papad, Boondi Raita, Pickle",
+    snacks: "Samosa with Green Chutney, Milk, Tea, Coffee",
+    dinner: "Triangle Paratha, Plain Dal, Plain Rice, Chicken Fry, Kadhai Paneer, Rasam, Pickle"
+  },
+
+  Saturday: {
+    breakfast: "Bhatura / Poori Aloo, Chole Masala, Sprouts, Muskmelon, Bread, Butter, Jam, Milk, Tea, Coffee",
+    lunch: "Chapathi, Brinjal Gravy, Plain Rice, Tomato Dal, Sambar, Lemon Rice, Buttermilk, Cabbage Poriyal, Rasam, Fryums, Pickle",
+    snacks: "Aloo Onion Kachori / Papdi Chat, Red Chutney, Milk, Tea, Coffee",
+    dinner: "Jeera Chapathi, Veg Manchurian, Fried Rice, Plain Rice, Masoor Dal, Rasam, Egg Curry, Pickle"
+  }
+},
+
+"Girls Hostel Block-2": {
+   Monday:{
+    breakfast:"Idly, Vada, Sambar, Coconut Chutney, Banana, Bread Butter Jam, Milk Tea Coffee",
+    lunch:"Butter Plain Roti, Toor Dal, Rice (South/North), Veg Kadai, Surakka Kootu, Tomato Rasam, Curd, Drumstick Sambar, Salad",
+    snacks:"Veg Cutlets, Green Chutney, Milk Tea Coffee",
+    dinner:"Phulka, Aloo Soya Gravy, Rice (North & South), Egg Drop Masala, Moong Dal, Khichdi, Pepper Rasam, Pickle"
+  },
+
+  Tuesday:{
+    breakfast:"Aloo Paratha with Curd, Rava Khichdi, Bread Butter Jam, Milk Tea Coffee, Papaya",
+    lunch:"Chapathi, Dal Makhani, Rice (South/North), Poondhu Kuzhambu, Aloo Fry, Rasam, Butter Milk, Papad, Boondi",
+    snacks:"Vada Pav, Milk Tea Coffee",
+    dinner:"Coriander Chapathi, Sev Tamatar, Rice (North & South), Semiya, Dal Fry, Aloo Bhindi, Sooji Halwa, Pickle"
+  },
+
+  Wednesday:{
+    breakfast:"Poha Jalebi, Bread Butter Jam, Milk Tea Coffee, Sprouts",
+    lunch:"Plain Roti, Besan Gatta, Lemon Rice, Chana Dal, Potato Podimas, Rasam & Pickle",
+    snacks:"Aloo, Red Chilli Chutney, Milk Tea Coffee",
+    dinner:"Roti Plain, Dal Tadka, White Rice, Butter Chicken, Matar Paneer Gravy, Rasam, Pickle"
+  },
+
+  Thursday:{
+    breakfast:"Pav Bhaji / Masala Pav, Rava Upma, Chutney, Bread Butter Jam, Milk Tea Coffee, Banana",
+    lunch:"Roti Butter Plain, Kala Chana Kadahi, Jeera Rice, Dal Tadka, White Rice, Curd Rice, Kheera Kootu, Rasam Khichdi",
+    snacks:"Chana Papdi Chaat / Pani Puri, Milk Tea Coffee",
+    dinner:"Plain Roti, Mix Veg Kadahi, Green Moong Dal, White Rice, Egg Drop, Salad, Pickle, Shahi Tukda"
+  },
+
+  Friday:{
+    breakfast:"Varieties of Uttapam, Sambar, Chutney, Bread Butter Jam, Milk Tea Coffee, Fruits",
+    lunch:"Plain Roti, Rajma Masala, Plain Rice, Bottle Gourd Kofta, Aloo 65, Rasam, Tomato Rice, Salad",
+    snacks:"Masala Sandwich, Sauce, Milk Tea Coffee",
+    dinner:"Roti, Dal Fry, Plain Rice, Chicken Variety, Lauki Chana Dal, Lemon Rasam, Pickle"
+  },
+
+  Saturday:{
+    breakfast:"Bhatura / Poori, Chole Masala, Vermicelli Khichdi, Bread Butter Jam, Milk Tea Coffee, Banana",
+    lunch:"Phulka, Kadhi Pakoda, White Rice, Baingan Bharta, Raw Banana Chops, Sambar Rice, Khichdi",
+    snacks:"Dahi Vada, Milk Tea Coffee",
+    dinner:"Jeera Chapathi, Dal Makhani, Jeera Rice, Sev Bhaji, White Rice (South), Dal & Pickle"
+  },
+
+  Sunday:{
+    breakfast:"Masala Dosa, Sambar, Chutney, Bread Butter Jam, Milk Tea Coffee, Fruits",
+    lunch:"Roti, Masala Dal, Chicken Dum Biryani, Veg Biryani, Onion Cucumber Raita, Paneer Butter Masala, White Rice",
+    snacks:"Samosa / Dal Kachori, Chutney, Milk Tea Coffee",
+    dinner:"Roti, Dal Makhani, Chole, White Rice, Gulab Jamun, Dal & Pickle"
+  }
+},
+
+"Special block":  {
+   Monday:{
+    breakfast:"Idly, Vada, Sambar, Coconut Chutney, Banana, Bread Butter Jam, Milk Tea Coffee",
+    lunch:"Butter Plain Roti, Toor Dal, Rice (South/North), Veg Kadai, Surakka Kootu, Tomato Rasam, Curd, Drumstick Sambar, Salad",
+    snacks:"Veg Cutlets, Green Chutney, Milk Tea Coffee",
+    dinner:"Phulka, Aloo Soya Gravy, Rice (North & South), Egg Drop Masala, Moong Dal, Khichdi, Pepper Rasam, Pickle"
+  },
+
+  Tuesday:{
+    breakfast:"Aloo Paratha with Curd, Rava Khichdi, Bread Butter Jam, Milk Tea Coffee, Papaya",
+    lunch:"Chapathi, Dal Makhani, Rice (South/North), Poondhu Kuzhambu, Aloo Fry, Rasam, Butter Milk, Papad, Boondi",
+    snacks:"Vada Pav, Milk Tea Coffee",
+    dinner:"Coriander Chapathi, Sev Tamatar, Rice (North & South), Semiya, Dal Fry, Aloo Bhindi, Sooji Halwa, Pickle"
+  },
+
+  Wednesday:{
+    breakfast:"Poha Jalebi, Bread Butter Jam, Milk Tea Coffee, Sprouts",
+    lunch:"Plain Roti, Besan Gatta, Lemon Rice, Chana Dal, Potato Podimas, Rasam & Pickle",
+    snacks:"Aloo, Red Chilli Chutney, Milk Tea Coffee",
+    dinner:"Roti Plain, Dal Tadka, White Rice, Butter Chicken, Matar Paneer Gravy, Rasam, Pickle"
+  },
+
+  Thursday:{
+    breakfast:"Pav Bhaji / Masala Pav, Rava Upma, Chutney, Bread Butter Jam, Milk Tea Coffee, Banana",
+    lunch:"Roti Butter Plain, Kala Chana Kadahi, Jeera Rice, Dal Tadka, White Rice, Curd Rice, Kheera Kootu, Rasam Khichdi",
+    snacks:"Chana Papdi Chaat / Pani Puri, Milk Tea Coffee",
+    dinner:"Plain Roti, Mix Veg Kadahi, Green Moong Dal, White Rice, Egg Drop, Salad, Pickle, Shahi Tukda"
+  },
+
+  Friday:{
+    breakfast:"Varieties of Uttapam, Sambar, Chutney, Bread Butter Jam, Milk Tea Coffee, Fruits",
+    lunch:"Plain Roti, Rajma Masala, Plain Rice, Bottle Gourd Kofta, Aloo 65, Rasam, Tomato Rice, Salad",
+    snacks:"Masala Sandwich, Sauce, Milk Tea Coffee",
+    dinner:"Roti, Dal Fry, Plain Rice, Chicken Variety, Lauki Chana Dal, Lemon Rasam, Pickle"
+  },
+
+  Saturday:{
+    breakfast:"Bhatura / Poori, Chole Masala, Vermicelli Khichdi, Bread Butter Jam, Milk Tea Coffee, Banana",
+    lunch:"Phulka, Kadhi Pakoda, White Rice, Baingan Bharta, Raw Banana Chops, Sambar Rice, Khichdi",
+    snacks:"Dahi Vada, Milk Tea Coffee",
+    dinner:"Jeera Chapathi, Dal Makhani, Jeera Rice, Sev Bhaji, White Rice (South), Dal & Pickle"
+  },
+
+  Sunday:{
+    breakfast:"Masala Dosa, Sambar, Chutney, Bread Butter Jam, Milk Tea Coffee, Fruits",
+    lunch:"Roti, Masala Dal, Chicken Dum Biryani, Veg Biryani, Onion Cucumber Raita, Paneer Butter Masala, White Rice",
+    snacks:"Samosa / Dal Kachori, Chutney, Milk Tea Coffee",
+    dinner:"Roti, Dal Makhani, Chole, White Rice, Gulab Jamun, Dal & Pickle"
+  }
+},
+
+};
+
+const mealTimings = {
+  breakfast: { start: 7 * 60 + 30, end: 9 * 60 + 15, label: "Breakfast🍞", timeText: "7:30 AM - 9:15 AM" },
+  lunch: { start: 12 * 60 + 15, end: 14 * 60 + 30, label: "Lunch🥗", timeText: "12:15 PM - 2:30 PM" },
+  snacks: { start: 17 * 60, end: 18 * 60 + 30, label: "Snacks🍩", timeText: "5:00 PM - 6:30 PM" },
+  dinner: { start: 19 * 60 + 30, end: 21 * 60 + 30, label: "Dinner🍚", timeText: "7:30 PM - 9:30 PM" }
+};
+
+const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+let ratings = {
+  Mayuri : { breakfast: [], lunch: [], snacks: [], dinner: [] },
+  Safal: { breakfast: [], lunch: [], snacks: [], dinner: [] },
+  Anchor: { breakfast: [], lunch: [], snacks: [], dinner: [] },
+  Rassense: { breakfast: [], lunch: [], snacks: [], dinner: [] },
+  "Jain Mess": { breakfast: [], lunch: [], snacks: [], dinner: [] },
+  "Girls Hostel Block-1": { breakfast: [], lunch: [], snacks: [], dinner: [] },
+  "Girls Hostel Block-2": { breakfast: [], lunch: [], snacks: [], dinner: [] },
+  "Special block": { breakfast: [], lunch: [], snacks: [], dinner: [] }
+};
+
+let suggestionsData = {
+  Mayuri: {},
+  Safal: {},
+  Anchor: {},
+  Rassense: {},
+  "Jain Mess": {},
+  "Girls Hostel Block-1": {},
+  "Girls Hostel Block-2": {},
+  "Special block": {}
+};
+let ratingsByUser = {
+  Mayuri: { breakfast: {}, lunch: {}, snacks: {}, dinner: {} },
+  Safal: { breakfast: {}, lunch: {}, snacks: {}, dinner: {} },
+  Anchor: { breakfast: {}, lunch: {}, snacks: {}, dinner: {} },
+  Rassense: { breakfast: {}, lunch: {}, snacks: {}, dinner: {} },
+  "Jain Mess": { breakfast: {}, lunch: {}, snacks: {}, dinner: {} },
+  "Girls Hostel Block-1": { breakfast: {}, lunch: {}, snacks: {}, dinner: {} },
+  "Girls Hostel Block-2": { breakfast: {}, lunch: {}, snacks: {}, dinner: {} },
+  "Special block": { breakfast: {}, lunch: {}, snacks: {}, dinner: {} }
+};
+
+let reviewsData = {
+  Mayuri: [],
+  Safal: [],
+  Anchor: [],
+  Rassense: [],
+  "Jain Mess": [],
+  "Girls Hostel Block-1": [],
+  "Girls Hostel Block-2": [],
+  "Special block": []
+};
+let currentRating = 0;
+let selectedMealType = "breakfast";
+
+
+
+function getSelectedMess() {
+  return document.getElementById("mess").value;
+}
+
+function getCurrentMinutes() {
+  const now = new Date();
+  return now.getHours() * 60 + now.getMinutes();
+}
+
+function getTodayName() {
+  return dayNames[new Date().getDay()];
+}
+
+function getTomorrowName() {
+  return dayNames[(new Date().getDay() + 1) % 7];
+}
+
+function getCurrentMealKey(minutes) {
+  if (minutes >= mealTimings.breakfast.start && minutes <= mealTimings.breakfast.end) return "breakfast";
+  if (minutes >= mealTimings.lunch.start && minutes <= mealTimings.lunch.end) return "lunch";
+  if (minutes >= mealTimings.snacks.start && minutes <= mealTimings.snacks.end) return "snacks";
+  if (minutes >= mealTimings.dinner.start && minutes <= mealTimings.dinner.end) return "dinner";
+  return null;
+}
+function getTodayDateKey() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day = String(now.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+function getNextMealInfo(minutes) {
+  if (minutes < mealTimings.breakfast.start) return { key: "breakfast", day: getTodayName() };
+  if (minutes < mealTimings.lunch.start) return { key: "lunch", day: getTodayName() };
+  if (minutes < mealTimings.snacks.start) return { key: "snacks", day: getTodayName() };
+  if (minutes < mealTimings.dinner.start) return { key: "dinner", day: getTodayName() };
+  return { key: "breakfast", day: getTomorrowName() };
+}
+function showToast(message, type = "success") {
+  const container = document.getElementById("toastContainer");
+  if (!container) return;
+
+  const toast = document.createElement("div");
+  toast.className = "toast " + type;
+  toast.textContent = message;
+
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
+function saveAppState() {
+  const state = {
+    ratings,
+    ratingsByUser,
+    suggestionsData,
+    reviewsData
+  };
+  localStorage.setItem("messAppState", JSON.stringify(state));
+}
+function toggleMenuFinder() {
+  const card = document.getElementById("menuFinderCard");
+  if (!card) return;
+
+  if (card.style.display === "none" || card.style.display === "") {
+    card.style.display = "block";
+    populateMenuDayOptions();
+  } else {
+    card.style.display = "none";
+  }
+}
+function populateMenuDayOptions() {
+  const daySelect = document.getElementById("menuDaySelect");
+  if (!daySelect) return;
+
+  daySelect.innerHTML = '<option value="">-- Select Day --</option>';
+
+  dayNames.forEach(day => {
+    const option = document.createElement("option");
+    option.value = day;
+    option.textContent = day;
+    daySelect.appendChild(option);
+  });
+}
+function renderSelectedMenuCard() {
+  const mess = getSelectedMess();
+  const day = document.getElementById("menuDaySelect")?.value;
+  const meal = document.getElementById("menuMealSelect")?.value;
+
+  const display = document.getElementById("selectedMenuDisplay");
+  const title = document.getElementById("selectedMenuTitle");
+  const text = document.getElementById("selectedMenuText");
+
+  if (!display || !title || !text) return;
+
+  if (!mess || !day || !meal) {
+    display.style.display = "none";
+    return;
+  }
+
+  const menuText = data[mess]?.[day]?.[meal];
+
+  if (!menuText) {
+    title.innerText = `${day} • ${meal.charAt(0).toUpperCase() + meal.slice(1)}`;
+    text.innerText = "No menu available";
+    display.style.display = "block";
+    return;
+  }
+
+  const mealLabel = meal.charAt(0).toUpperCase() + meal.slice(1);
+  title.innerText = `${day} • ${mealLabel}`;
+  text.innerText = menuText;
+  display.style.display = "block";
+}
+
+function showMealPopup() {
+  const mess = getSelectedMess();
+  const popup = document.getElementById("mealPopup");
+
+  if (!mess || !popup) return;
+
+  const today = getTodayName();
+  const menu = data[mess][today];
+
+  const now = getCurrentMinutes();
+  const currentMeal = getCurrentMealKey(now);
+
+  let mealKey;
+  let mealDay = today;
+
+  if (currentMeal) {
+    mealKey = currentMeal;
+  } else {
+    const next = getNextMealInfo(now);
+    mealKey = next.key;
+    mealDay = next.day;
+  }
+
+  const mealInfo = mealTimings[mealKey];
+
+  document.getElementById("popupMealTitle").innerText = mealInfo.label;
+  document.getElementById("popupMealTime").innerText = mealInfo.timeText;
+  document.getElementById("popupMealMenu").innerText =
+    data[mess][mealDay][mealKey] || "No menu available";
+
+  popup.classList.remove("hidden");
+}
+function closeMealPopup(){
+  document.getElementById("mealPopup").classList.add("hidden");
+}
+function loadAppState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("messAppState"));
+    if (!saved) {
+      ensureMealWiseRatingsStructure();
+      ensureRatingsByUserStructure();
+      return;
+    }
+
+    if (saved.ratings) {
+      Object.keys(data).forEach(mess => {
+        const savedMessRatings = saved.ratings[mess];
+
+        if (Array.isArray(savedMessRatings)) {
+          ratings[mess] = {
+            breakfast: [],
+            lunch: [],
+            snacks: [],
+            dinner: savedMessRatings
+          };
+        } else {
+          ratings[mess] = {
+            breakfast: Array.isArray(savedMessRatings?.breakfast) ? savedMessRatings.breakfast : [],
+            lunch: Array.isArray(savedMessRatings?.lunch) ? savedMessRatings.lunch : [],
+            snacks: Array.isArray(savedMessRatings?.snacks) ? savedMessRatings.snacks : [],
+            dinner: Array.isArray(savedMessRatings?.dinner) ? savedMessRatings.dinner : []
+          };
+        }
+      });
+    }
+
+    if (saved.ratingsByUser) {
+      Object.keys(data).forEach(mess => {
+        ratingsByUser[mess] = {
+          breakfast: saved.ratingsByUser[mess]?.breakfast || {},
+          lunch: saved.ratingsByUser[mess]?.lunch || {},
+          snacks: saved.ratingsByUser[mess]?.snacks || {},
+          dinner: saved.ratingsByUser[mess]?.dinner || {}
+        };
+      });
+    }
+
+    if (saved.suggestionsData) {
+      Object.keys(data).forEach(mess => {
+        if (!suggestionsData[mess]) suggestionsData[mess] = {};
+        suggestionsData[mess] = saved.suggestionsData[mess] || suggestionsData[mess];
+      });
+    }
+
+    if (saved.reviewsData) {
+      Object.keys(data).forEach(mess => {
+        if (!reviewsData[mess]) reviewsData[mess] = [];
+        reviewsData[mess] = Array.isArray(saved.reviewsData[mess]) ? saved.reviewsData[mess] : reviewsData[mess];
+      });
+    }
+
+    ensureMealWiseRatingsStructure();
+    ensureRatingsByUserStructure();
+  } catch (error) {
+    console.log("Saved data could not be loaded.", error);
+    ensureMealWiseRatingsStructure();
+    ensureRatingsByUserStructure();
+  }
+}
+function ensureRatingsByUserStructure() {
+  Object.keys(data).forEach(mess => {
+    if (!ratingsByUser[mess]) {
+      ratingsByUser[mess] = { breakfast: {}, lunch: {}, snacks: {}, dinner: {} };
+    } else {
+      if (!ratingsByUser[mess].breakfast) ratingsByUser[mess].breakfast = {};
+      if (!ratingsByUser[mess].lunch) ratingsByUser[mess].lunch = {};
+      if (!ratingsByUser[mess].snacks) ratingsByUser[mess].snacks = {};
+      if (!ratingsByUser[mess].dinner) ratingsByUser[mess].dinner = {};
+    }
+  });
+}
+
+function getCurrentUserKey() {
+  const profile = JSON.parse(localStorage.getItem("messUserProfile"));
+  if (profile && profile.username) {
+    return profile.username.trim().toLowerCase();
+  }
+  return "guest_user";
+}
+function updateRatingAccess() {
+  const mess = getSelectedMess();
+  const profile = JSON.parse(localStorage.getItem("messUserProfile"));
+
+  const starsContainer = document.getElementById("stars");
+  const submitBtn = document.getElementById("submitRatingBtn");
+  const msg = document.getElementById("ratingRestrictionMsg");
+
+  if (!starsContainer || !submitBtn || !msg) return;
+
+  if (!mess || !profile || !profile.mess) {
+    starsContainer.classList.remove("rating-disabled");
+    submitBtn.disabled = false;
+    msg.style.display = "none";
+    return;
+  }
+
+  if (profile.mess !== mess) {
+    starsContainer.classList.add("rating-disabled");
+    submitBtn.disabled = true;
+    msg.style.display = "block";
+    setRating(0);
+  } else {
+    starsContainer.classList.remove("rating-disabled");
+    submitBtn.disabled = false;
+    msg.style.display = "none";
+  }
+}
+function saveProfile() {
+  const username = document.getElementById("username").value.trim();
+  const college = document.getElementById("userCollege").value.trim();
+  const mess = document.getElementById("userMess").value.trim();
+  const hostel = document.getElementById("userHostel").value.trim();
+
+  if (!username || !college || !mess || !hostel) {
+    showToast("Please fill all profile fields.","error");
+    return;
+  }
+
+  const profile = { username, college, mess, hostel };
+  localStorage.setItem("messUserProfile", JSON.stringify(profile));
+  renderProfile();
+  showToast("Profile saved successfully.","success");
+}
+
+function populateLoginMessOptions() {
+  const select = document.getElementById("loginMessSelect");
+  if (!select) return;
+
+  select.innerHTML = '<option value="">Select Your Mess</option>';
+
+  Object.keys(data).forEach(mess => {
+    const option = document.createElement("option");
+    option.value = mess;
+    option.textContent = mess;
+    select.appendChild(option);
+  });
+}
+function saveSoftLogin() {
+  const nameInput = document.getElementById("loginNameInput");
+  const messSelect = document.getElementById("loginMessSelect");
+  const modal = document.getElementById("loginModal");
+
+  if (!nameInput || !messSelect) return;
+
+  const name = nameInput.value.trim();
+  const mess = messSelect.value;
+
+  if (!name) {
+    showToast("Please enter your name.","error");
+    nameInput.focus();
+    return;
+  }
+
+  if (!mess) {
+    showToast("Please select your mess.","error")
+    messSelect.focus();
+    return;
+  }
+
+  const newProfile = {
+    username: name,
+    mess: mess
+  };
+
+  localStorage.setItem("messUserProfile", JSON.stringify(newProfile));
+
+  if (modal) modal.classList.add("hidden");
+
+  renderProfile();
+  showLoggedInUser();
+  updateMenu();
+  updateRatingAccess();
+}
+function getAverageForMeal(mess, mealKey) {
+  const arr = (ratings[mess] && ratings[mess][mealKey]) ? ratings[mess][mealKey] : [];
+  if (!arr.length) return null;
+  return arr.reduce((sum, r) => sum + r, 0) / arr.length;
+}
+
+function getBestMessForMeal(mealKey) {
+  let bestMess = null;
+  let bestAvg = -1;
+
+  Object.keys(data).forEach(mess => {
+    const avg = getAverageForMeal(mess, mealKey);
+    if (avg !== null && avg > bestAvg) {
+      bestAvg = avg;
+      bestMess = mess;
+    }
+  });
+
+  if (!bestMess) return "No data yet";
+  return `${bestMess} • ${bestAvg.toFixed(1)}/5`;
+}
+
+function getWorstMessForMeal(mealKey) {
+  let worstMess = null;
+  let worstAvg = Infinity;
+
+  Object.keys(data).forEach(mess => {
+    const avg = getAverageForMeal(mess, mealKey);
+    if (avg !== null && avg < worstAvg) {
+      worstAvg = avg;
+      worstMess = mess;
+    }
+  });
+
+  if (!worstMess) return "No data yet";
+  return `${worstMess} • ${worstAvg.toFixed(1)}/5`;
+}
+
+function getTrendingFoodSuggestion() {
+  let topFood = null;
+  let topVotes = 0;
+
+  Object.keys(suggestionsData).forEach(mess => {
+    Object.entries(suggestionsData[mess] || {}).forEach(([food, votes]) => {
+      if (votes > topVotes) {
+        topVotes = votes;
+        topFood = food;
+      }
+    });
+  });
+
+  if (!topFood) return "No data yet";
+  return `${topFood} • ${topVotes} vote${topVotes > 1 ? "s" : ""}`;
+}
+
+function renderInsightCards() {
+  const bestBreakfastCard = document.getElementById("bestBreakfastCard");
+  const bestLunchCard = document.getElementById("bestLunchCard");
+  const worstDinnerCard = document.getElementById("worstDinnerCard");
+  const trendingFoodCard = document.getElementById("trendingFoodCard");
+
+  if (!bestBreakfastCard || !bestLunchCard || !worstDinnerCard || !trendingFoodCard) return;
+
+  bestBreakfastCard.innerText = getBestMessForMeal("breakfast");
+  bestLunchCard.innerText = getBestMessForMeal("lunch");
+  worstDinnerCard.innerText = getWorstMessForMeal("dinner");
+  trendingFoodCard.innerText = getTrendingFoodSuggestion();
+}
+function renderProfile() {
+  const profile = JSON.parse(localStorage.getItem("messUserProfile"));
+  const profileForm = document.getElementById("profileForm");
+  const profileDisplay = document.getElementById("profileDisplay");
+  const editBtn = document.getElementById("editBtn");
+
+  if (!profile) {
+    profileForm.style.display = "block";
+    profileDisplay.style.display = "none";
+    editBtn.style.display = "none";
+    return;
+  }
+
+  profileDisplay.innerHTML = `
+  <p><b>Name:</b> ${profile.username || "-"}</p>
+  <p><b>College:</b> ${profile.college || "-"}</p>
+  <p><b>Mess:</b> ${profile.mess || "-"}</p>
+  <p><b>Hostel:</b> ${profile.hostel || "-"}</p>
+`;
+
+  profileForm.style.display = "none";
+  profileDisplay.style.display = "block";
+  editBtn.style.display = "block";
+}
+
+function editProfile() {
+  const profile = JSON.parse(localStorage.getItem("messUserProfile"));
+  if (!profile) return;
+
+  document.getElementById("username").value = profile.username || "";
+  document.getElementById("userCollege").value = profile.college || "";
+  document.getElementById("userMess").value = profile.mess || "";
+  document.getElementById("userHostel").value = profile.hostel || "";
+
+  document.getElementById("profileForm").style.display = "block";
+  document.getElementById("profileDisplay").style.display = "none";
+  document.getElementById("editBtn").style.display = "none";
+}
+
+function updateMenu() {
+  const m = getSelectedMess();
+  const todayLabel = document.getElementById("todayLabel");
+  const menuSlider = document.getElementById("menuSlider");
+
+  const breakfastEl = document.getElementById("menu-breakfast");
+  const lunchEl = document.getElementById("menu-lunch");
+  const snacksEl = document.getElementById("menu-snacks");
+  const dinnerEl = document.getElementById("menu-dinner");
+
+  const breakfastSlide = document.getElementById("slide-breakfast");
+  const lunchSlide = document.getElementById("slide-lunch");
+  const snacksSlide = document.getElementById("slide-snacks");
+  const dinnerSlide = document.getElementById("slide-dinner");
+
+  const slidesMap = {
+    breakfast: breakfastSlide,
+    lunch: lunchSlide,
+    snacks: snacksSlide,
+    dinner: dinnerSlide
+  };
+
+  if (!m) {
+    todayLabel.innerText = "-";
+
+    breakfastEl.innerText = "-";
+    lunchEl.innerText = "-";
+    snacksEl.innerText = "-";
+    dinnerEl.innerText = "-";
+  
+    document.getElementById("viewMenuBtn").style.display = "none";
+    document.getElementById("menuImageContainer").style.display = "none";
+    document.getElementById("menuFinderCard").style.display = "none";
+    document.getElementById("selectedMenuDisplay").style.display = "none";
+
+    Object.values(slidesMap).forEach(slide => slide.classList.remove("active-meal"));
+
+    
+    document.getElementById("menuImageContainer").style.display = "none";
+    renderInsightCards();
+    updateRatingAccess();
+    renderSuggestions();
+    renderReviews();
+    updateBestMeal();
+    return;
+  }
+
+  const todayName = getTodayName();
+  const todaysMenu = data[m][todayName];
+  const nowMinutes = getCurrentMinutes();
+  const currentMealKey = getCurrentMealKey(nowMinutes);
+  
+  document.getElementById("viewMenuBtn").style.display = "block";
+  const daySelect = document.getElementById("menuDaySelect");
+  const mealSelect = document.getElementById("menuMealSelect");
+  const selectedMenuDisplay = document.getElementById("selectedMenuDisplay");
+
+  if (daySelect) daySelect.value = "";
+  if (mealSelect) mealSelect.value = "";
+  if (selectedMenuDisplay) selectedMenuDisplay.style.display = "none";
+  
+  todayLabel.innerText = todayName;
+  
+
+  breakfastEl.innerText = todaysMenu.breakfast || "No menu available";
+  lunchEl.innerText = todaysMenu.lunch || "No menu available";
+  snacksEl.innerText = todaysMenu.snacks || "No menu available";
+  dinnerEl.innerText = todaysMenu.dinner || "No menu available";
+
+  Object.values(slidesMap).forEach(slide => slide.classList.remove("active-meal"));
+
+  let defaultMealKey;
+
+  if (currentMealKey) {
+    defaultMealKey = currentMealKey;
+  } else {
+    const nextMealInfo = getNextMealInfo(nowMinutes);
+    defaultMealKey = nextMealInfo.key;
+  }
+
+  const activeSlide = slidesMap[defaultMealKey];
+  if (activeSlide) {
+  activeSlide.classList.add("active-meal");
+
+  setTimeout(() => {
+    const slider = document.getElementById("menuSlider");
+    if (slider) {
+      slider.scrollTo({
+        left: activeSlide.offsetLeft,
+        behavior: "smooth"
+      });
+    }
+  }, 100);
+}
+
+
+  renderInsightCards();
+  updateRatingAccess();
+  renderSuggestions();
+  renderReviews();
+  updateBestMeal();
+  setTimeout(() => {
+  showMealPopup();
+}, 300);
+}
+
+function showFullMenu() {
+  const selectedMess = getSelectedMess();
+  if (!selectedMess) {
+    alert("Please select a mess first.");
+    return;
+  }
+
+  const menuUrl = uploadedMenus[selectedMess];
+  const menuImage = document.getElementById("menuImage");
+  const menuImageContainer = document.getElementById("menuImageContainer");
+
+  if (!menuUrl) {
+    menuImage.removeAttribute("src");
+    menuImageContainer.style.display = "none";
+    alert("Full menu has not been uploaded yet.");
+    return;
+  }
+
+  if (menuImageContainer.style.display === "block" && menuImage.src.includes(menuUrl)) {
+    menuImageContainer.style.display = "none";
+    return;
+  }
+
+  menuImage.src = menuUrl;
+  menuImage.alt = selectedMess + " full menu";
+  menuImageContainer.style.display = "block";
+}
+
+function getMealLabel(mealKey) {
+  const labels = {
+    breakfast: "Breakfast",
+    lunch: "Lunch",
+    snacks: "Snacks",
+    dinner: "Dinner"
+  };
+  return labels[mealKey] || mealKey;
+}
+
+function ensureMealWiseRatingsStructure() {
+  Object.keys(data).forEach(mess => {
+    if (!ratings[mess] || Array.isArray(ratings[mess])) {
+      ratings[mess] = { breakfast: [], lunch: [], snacks: [], dinner: [] };
+    } else {
+      if (!Array.isArray(ratings[mess].breakfast)) ratings[mess].breakfast = [];
+      if (!Array.isArray(ratings[mess].lunch)) ratings[mess].lunch = [];
+      if (!Array.isArray(ratings[mess].snacks)) ratings[mess].snacks = [];
+      if (!Array.isArray(ratings[mess].dinner)) ratings[mess].dinner = [];
+    }
+  });
+}
+
+function changeMealType() {
+  selectedMealType = document.getElementById("mealType").value;
+  document.getElementById("selectedMealText").innerText = getMealLabel(selectedMealType);
+  setRating(0);
+}
+
+function getOverallAverageForMess(mess) {
+  const messRatings = ratings[mess] || { breakfast: [], lunch: [], snacks: [], dinner: [] };
+  const allRatings = [
+    ...(messRatings.breakfast || []),
+    ...(messRatings.lunch || []),
+    ...(messRatings.snacks || []),
+    ...(messRatings.dinner || [])
+  ];
+
+  if (!allRatings.length) return null;
+
+  return allRatings.reduce((sum, rating) => sum + rating, 0) / allRatings.length;
+}
+
+
+function setRating(value) {
+  currentRating = value;
+  document.getElementById("ratingValue").innerText = value;
+
+  const stars = document.querySelectorAll("#stars span");
+  stars.forEach((star, index) => {
+    if (index < value) {
+      star.classList.add("active");
+    } else {
+      star.classList.remove("active");
+    }
+  });
+}
+function showLoggedInUser() {
+  const profile = JSON.parse(localStorage.getItem("messUserProfile"));
+  const el = document.getElementById("userDisplay");
+
+  if (el && profile && profile.username) {
+    el.innerText = "Logged in as: " + profile.username + " (" + (profile.mess || "No mess selected") + ")";
+  }
+}
+function submitRating() {
+  console.log("submitRating started");
+
+  const mess = getSelectedMess();
+  const profile = JSON.parse(localStorage.getItem("messUserProfile"));
+  const userKey = currentUserId || getCurrentUserKey();
+  const dateKey = getTodayDateKey();
+  const dailyUserKey = `${userKey}_${dateKey}`;
+
+  if (!mess) {
+    console.log("No mess selected");
+    showToast("Please select a mess on the Home tab first.", "error");
+    return;
+  }
+
+  if (!profile || !profile.mess) {
+    console.log("Profile or profile.mess missing");
+    showToast("Please complete login first.", "error");
+    return;
+  }
+
+  if (profile.mess !== mess) {
+    console.log("Wrong allotted mess", profile.mess, mess);
+    showToast("You can only rate your allotted mess: " + profile.mess, "error");
+    return;
+  }
+
+  if (currentRating === 0) {
+    console.log("Current rating is 0");
+    showToast("Please select a rating first.", "error");
+    return;
+  }
+
+  ensureMealWiseRatingsStructure();
+  ensureRatingsByUserStructure();
+
+  if (ratingsByUser[mess][selectedMealType][dailyUserKey]) {
+    console.log("User already rated this meal today");
+    showToast("You have already rated this meal today.", "error");
+    return;
+  }
+
+  ratings[mess][selectedMealType].push(currentRating);
+  ratingsByUser[mess][selectedMealType][dailyUserKey] = currentRating;
+
+  console.log("Calling saveRatingToFirebase", {
+    mess,
+    selectedMealType,
+    currentRating,
+    username: profile.username || "Guest",
+    currentUserId,
+    dateKey
+  });
+
+  saveRatingToFirebase(mess, selectedMealType, currentRating, profile.username || "Guest");
+
+  saveAppState();
+  updateBestMeal();
+
+  setRating(0);
+
+  showToast(selectedMealType + " rating submitted successfully.", "success");
+}
+
+
+
+async function addSuggestion() {
+  const mess = getSelectedMess();
+  const input = document.getElementById("suggestionInput");
+  const value = input.value.trim();
+
+  const profile = JSON.parse(localStorage.getItem("messUserProfile"));
+  const username = profile && profile.username ? profile.username : "Guest";
+
+  if (!mess) {
+    showToast("Please select a mess first.", "error");
+    return;
+  }
+
+  if (!value) {
+    showToast("Please enter a suggestion.", "error");
+    return;
+  }
+
+  await saveSuggestionToFirebase(mess, value, username);
+
+  input.value = "";
+  await fetchSuggestionsFromFirebase();
+
+  showToast("Suggestion submitted.", "success");
+}
+
+function renderSuggestions() {
+  const mess = getSelectedMess();
+  const suggestionsList = document.getElementById("suggestions");
+  suggestionsList.innerHTML = "";
+
+  if (!mess) {
+    const li = document.createElement("li");
+    li.textContent = "Select a mess to view suggestions";
+    suggestionsList.appendChild(li);
+    return;
+  }
+
+  const messSuggestions = suggestionsData[mess] || {};
+  const entries = Object.entries(messSuggestions);
+
+  if (entries.length === 0) {
+    const li = document.createElement("li");
+    li.textContent = "No suggestions yet";
+    suggestionsList.appendChild(li);
+    return;
+  }
+
+  entries
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .forEach(([item, count]) => {
+      const li = document.createElement("li");
+      li.textContent = `${item} (${count} vote${count > 1 ? "s" : ""})`;
+      suggestionsList.appendChild(li);
+    });
+}
+async function addReview() {
+  const mess = getSelectedMess();
+  const reviewText = document.getElementById("reviewText");
+  const value = reviewText.value.trim();
+
+  const profile = JSON.parse(localStorage.getItem("messUserProfile"));
+  const username = profile && profile.username ? profile.username : "Guest";
+
+  if (!mess) {
+    showToast("Please select a mess first.", "error");
+    return;
+  }
+
+  if (!value) {
+    showToast("Please write a review first.", "error");
+    return;
+  }
+
+  await saveReviewToFirebase(mess, value, username);
+
+  reviewText.value = "";
+  await fetchReviewsFromFirebase();
+
+  showToast("Review submitted.", "success");
+}
+
+function renderReviews() {
+  const mess = getSelectedMess();
+  const reviewsList = document.getElementById("reviews");
+  reviewsList.innerHTML = "";
+
+  if (!mess) {
+    const li = document.createElement("li");
+    li.textContent = "Select a mess to view reviews";
+    reviewsList.appendChild(li);
+    return;
+  }
+
+  const messReviews = reviewsData[mess] || [];
+  if (messReviews.length === 0) {
+    const li = document.createElement("li");
+    li.textContent = "No reviews yet";
+    reviewsList.appendChild(li);
+    return;
+  }
+
+  messReviews.slice(0, 5).forEach(review => {
+    const li = document.createElement("li");
+
+    if (typeof review === "string") {
+      li.textContent = review;
+    } else {
+      li.textContent = review.user + ": " + review.text;
+    }
+
+    reviewsList.appendChild(li);
+  });
+}
+
+function updateBestMeal() {
+  const bestMealEl = document.getElementById("bestMeal");
+
+  let bestMess = null;
+  let bestAvg = 0;
+
+  Object.keys(data).forEach(mess => {
+    const messRatings = ratings[mess];
+
+    const allRatings = [
+      ...(messRatings.breakfast || []),
+      ...(messRatings.lunch || []),
+      ...(messRatings.snacks || []),
+      ...(messRatings.dinner || [])
+    ];
+
+    if (allRatings.length === 0) return;
+
+    const avg = allRatings.reduce((sum, r) => sum + r, 0) / allRatings.length;
+
+    if (avg > bestAvg) {
+      bestAvg = avg;
+      bestMess = mess;
+    }
+  });
+
+  if (!bestMess) {
+    bestMealEl.innerText = "No data yet";
+    return;
+  }
+
+  bestMealEl.innerText = `${bestMess} is leading with ${bestAvg.toFixed(1)}/5`;
+}
+
+function setBackendMenu(messName, imageUrl) {
+  if (!messName || !uploadedMenus.hasOwnProperty(messName)) return;
+  uploadedMenus[messName] = imageUrl;
+}
+
+window.onload = function() {
+  let messSelect = document.getElementById("mess");
+  Object.keys(data).forEach(m => {
+    let opt = document.createElement("option");
+    opt.text = m;
+    opt.value = m;
+    messSelect.appendChild(opt);
+  });
+
+  loadAppState();
+  showLoggedInUser();
+  renderProfile();
+  changeMealType();
+  renderSuggestions();
+  renderReviews();
+  updateBestMeal();
+  renderInsightCards();
+  updateMenu();
+  renderPolls();
+  waitForFirebaseAndInitAuth();
+  
+
+  setInterval(updateMenu, 60000);
+
+  document.querySelector(".footer div").classList.add("active-tab");
+};
+// ================= POLL SYSTEM =================
+
+let pollState = {
+  active: {
+    id: "poll_001",
+    question: "Which meal do you like the most?",
+    options: [
+      { text: "Breakfast", votes: 0 },
+      { text: "Lunch", votes: 0 },
+      { text: "Snacks", votes: 0 },
+      { text: "Dinner", votes: 0 }
+    ],
+    votedUsers: []
+  },
+  previous: []
+};
+
+function savePollState() {
+  localStorage.setItem("messPollState", JSON.stringify(pollState));
+}
+
+function loadPollState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("messPollState"));
+    if (!saved) return;
+
+    if (saved.active) pollState.active = saved.active;
+    if (saved.previous) pollState.previous = saved.previous;
+  } catch (e) {}
+}
+
+function getPollUserKey() {
+  const profile = JSON.parse(localStorage.getItem("messUserProfile"));
+
+  if (profile && profile.username) {
+    return profile.username.toLowerCase().trim();
+  }
+
+  return "guest_user";
+}
+function getPollTotalVotes(poll) {
+  return poll.options.reduce((sum, o) => sum + o.votes, 0);
+}
+
+async function votePoll(index) {
+  const user = currentUserId || getPollUserKey();
+
+  if (!pollState.active) {
+    showToast("No active poll found.", "error");
+    return;
+  }
+
+  if (pollState.active.votedUsers.includes(user)) {
+    showToast("You already voted!", "error");
+    return;
+  }
+
+  pollState.active.options[index].votes++;
+  pollState.active.votedUsers.push(user);
+
+  await savePollVoteToFirebase(pollState.active);
+  await fetchPollsFromFirebase();
+}
+async function saveRatingToFirebase(mess, meal, rating, username) {
+  console.log("saveRatingToFirebase entered", {
+    hasFirebaseDB: !!window.firebaseDB,
+    currentUserId,
+    mess,
+    meal,
+    rating,
+    username
+  });
+
+  if (!window.firebaseDB || !currentUserId) {
+    console.log("Firebase DB or currentUserId missing");
+    return;
+  }
+
+  const dateKey = getTodayDateKey();
+  const ratingId = `${mess}_${meal}_${currentUserId}_${dateKey}`;
+
+  try {
+    await firestoreSetDoc(
+      firestoreDoc(firebaseDB, "ratings", ratingId),
+      {
+        uid: currentUserId,
+        username: username,
+        mess: mess,
+        meal: meal,
+        rating: rating,
+        dateKey: dateKey,
+        createdAt: new Date().toISOString()
+      }
+    );
+
+    console.log("Rating saved to Firebase");
+  } catch (error) {
+    console.error("Error saving rating:", error);
+  }
+}
+async function fetchReviewsFromFirebase() {
+  if (!window.firebaseDB || !window.firestoreCollection || !window.firestoreGetDocs) {
+    console.log("Firestore not ready yet for reviews");
+    return;
+  }
+
+  try {
+    reviewsData = {};
+    Object.keys(data).forEach(mess => {
+      reviewsData[mess] = [];
+    });
+
+    const snapshot = await firestoreGetDocs(
+      firestoreCollection(firebaseDB, "reviews")
+    );
+
+    snapshot.forEach(docSnap => {
+      const item = docSnap.data();
+
+      if (!item.mess || !item.text) return;
+      if (!reviewsData[item.mess]) return;
+
+      reviewsData[item.mess].unshift({
+        user: item.user || "Guest",
+        text: item.text,
+        createdAt: item.createdAt || ""
+      });
+    });
+
+    console.log("Reviews fetched from Firebase");
+    renderReviews();
+  } catch (error) {
+    console.error("Error fetching reviews from Firebase:", error);
+  }
+}
+
+function renderPolls() {
+  const activeDiv = document.getElementById("activePolls");
+  const prevDiv = document.getElementById("previousPoll");
+
+  if (!pollState.active) {
+    activeDiv.innerHTML = "No Active Polls";
+  } else {
+    const total = getPollTotalVotes(pollState.active);
+    const voted = pollState.active.votedUsers.includes(getPollUserKey());
+
+    activeDiv.innerHTML = `
+      <div class="poll-question">${pollState.active.question}</div>
+      ${pollState.active.options.map((o,i)=>{
+        const percent = total ? Math.round((o.votes/total)*100) : 0;
+        return `
+        <div class="poll-option">
+          <div class="poll-option-top">
+            <strong>${o.text}</strong>
+            ${voted ? `${o.votes} (${percent}%)`
+            : `<button class="poll-vote-btn" onclick="votePoll(${i})">Vote</button>`}
+          </div>
+          <div class="poll-bar">
+            <div class="poll-bar-fill" style="width:${percent}%"></div>
+          </div>
+        </div>`;
+      }).join("")}
+      <div class="poll-meta">Total Votes: ${total}</div>
+    `;
+  }
+
+  if (!pollState.previous.length) {
+    prevDiv.innerHTML = "No previous polls";
+  } else {
+    prevDiv.innerHTML = pollState.previous.map(p=>{
+      const total = getPollTotalVotes(p);
+      return `
+      <div class="poll-history-card">
+        <h4>${p.question}</h4>
+        ${p.options.map(o=>{
+          const percent = total ? Math.round((o.votes/total)*100) : 0;
+          return `
+          <div class="poll-option">
+            <div class="poll-option-top">
+              <strong>${o.text}</strong>
+              ${o.votes} (${percent}%)
+            </div>
+            <div class="poll-bar">
+              <div class="poll-bar-fill" style="width:${percent}%"></div>
+            </div>
+          </div>`;
+        }).join("")}
+        <div class="poll-meta">Total Votes: ${total}</div>
+        <span class="poll-closed">Closed</span>
+      </div>`;
+    }).join("");
+  }
+}
+function resetRatingsStructure() {
+  ratings = {};
+  ratingsByUser = {};
+
+  Object.keys(data).forEach(mess => {
+    ratings[mess] = { breakfast: [], lunch: [], snacks: [], dinner: [] };
+    ratingsByUser[mess] = { breakfast: {}, lunch: {}, snacks: {}, dinner: {} };
+  });
+}
+async function fetchRatingsFromFirebase() {
+  if (!window.firebaseDB || !window.firestoreCollection || !window.firestoreGetDocs) {
+    console.log("Firestore not ready yet");
+    return;
+  }
+
+  try {
+    resetRatingsStructure();
+
+    const snapshot = await firestoreGetDocs(
+      firestoreCollection(firebaseDB, "ratings")
+    );
+
+    snapshot.forEach(docSnap => {
+      const item = docSnap.data();
+
+      if (!item.mess || !item.meal || typeof item.rating !== "number") return;
+      if (!ratings[item.mess] || !ratings[item.mess][item.meal]) return;
+
+      ratings[item.mess][item.meal].push(item.rating);
+
+      if (item.uid) {
+  const itemDateKey =
+    item.dateKey ||
+    (item.createdAt ? String(item.createdAt).slice(0, 10) : "unknown-date");
+
+  const dailyUserKey = `${item.uid}_${itemDateKey}`;
+  ratingsByUser[item.mess][item.meal][dailyUserKey] = item.rating;
+}
+    });
+
+    console.log("Ratings fetched from Firebase");
+
+    updateBestMeal();
+    renderInsightCards();
+  } catch (error) {
+    console.error("Error fetching ratings from Firebase:", error);
+  }
+}
+async function saveReviewToFirebase(mess, text, username) {
+  if (!window.firebaseDB || !currentUserId) {
+    console.log("Firebase DB or currentUserId missing for review");
+    return;
+  }
+
+  try {
+    await firestoreAddDoc(
+      firestoreCollection(firebaseDB, "reviews"),
+      {
+        uid: currentUserId,
+        user: username,
+        text: text,
+        mess: mess,
+        createdAt: new Date().toISOString()
+      }
+    );
+
+    console.log("Review saved to Firebase");
+  } catch (error) {
+    console.error("Error saving review:", error);
+    showToast("Error saving review to Firebase", "error");
+  }
+}
+async function saveSuggestionToFirebase(mess, food, username) {
+  if (!window.firebaseDB || !currentUserId) {
+    console.log("Firebase DB or currentUserId missing for suggestion");
+    return;
+  }
+
+  try {
+    await firestoreAddDoc(
+      firestoreCollection(firebaseDB, "suggestions"),
+      {
+        uid: currentUserId,
+        user: username,
+        mess: mess,
+        food: food,
+        createdAt: new Date().toISOString()
+      }
+    );
+
+    console.log("Suggestion saved to Firebase");
+  } catch (error) {
+    console.error("Error saving suggestion:", error);
+    showToast("Error saving suggestion to Firebase", "error");
+  }
+}
+async function fetchSuggestionsFromFirebase() {
+  if (!window.firebaseDB || !window.firestoreCollection || !window.firestoreGetDocs) {
+    console.log("Firestore not ready yet for suggestions");
+    return;
+  }
+
+  try {
+    suggestionsData = {};
+    Object.keys(data).forEach(mess => {
+      suggestionsData[mess] = {};
+    });
+
+    const snapshot = await firestoreGetDocs(
+      firestoreCollection(firebaseDB, "suggestions")
+    );
+
+    snapshot.forEach(docSnap => {
+      const item = docSnap.data();
+
+      if (!item.mess || !item.food) return;
+      if (!suggestionsData[item.mess]) return;
+
+      if (!suggestionsData[item.mess][item.food]) {
+        suggestionsData[item.mess][item.food] = 0;
+      }
+
+      suggestionsData[item.mess][item.food] += 1;
+    });
+
+    console.log("Suggestions fetched from Firebase");
+    renderSuggestions();
+    renderInsightCards();
+  } catch (error) {
+    console.error("Error fetching suggestions from Firebase:", error);
+  }
+}
+async function saveActivePollToFirebase(question, options) {
+  if (!window.firebaseDB || !currentUserId) {
+    console.log("Firebase DB or currentUserId missing for poll");
+    return;
+  }
+
+  const pollId = "active_poll";
+
+  try {
+    await firestoreSetDoc(
+      firestoreDoc(firebaseDB, "polls", pollId),
+      {
+        id: pollId,
+        question: question,
+        options: options.map(o => ({ text: o, votes: 0 })),
+        status: "active",
+        createdAt: new Date().toISOString()
+      }
+    );
+
+    console.log("Active poll saved to Firebase");
+  } catch (error) {
+    console.error("Error saving active poll:", error);
+    showToast("Error saving poll to Firebase", "error");
+  }
+}
+async function fetchPollsFromFirebase() {
+  if (!window.firebaseDB || !window.firestoreCollection || !window.firestoreGetDocs) {
+    console.log("Firestore not ready yet for polls");
+    return;
+  }
+
+  try {
+    pollState = {
+      active: null,
+      previous: []
+    };
+
+    const snapshot = await firestoreGetDocs(
+      firestoreCollection(firebaseDB, "polls")
+    );
+
+    snapshot.forEach(docSnap => {
+      const item = docSnap.data();
+      if (!item || !item.question || !Array.isArray(item.options)) return;
+
+      const normalizedPoll = {
+        id: item.id || docSnap.id,
+        question: item.question,
+        options: item.options,
+        votedUsers: item.votedUsers || []
+      };
+
+      if (item.status === "active") {
+        pollState.active = normalizedPoll;
+      } else {
+        pollState.previous.push(normalizedPoll);
+      }
+    });
+
+    console.log("Polls fetched from Firebase");
+    renderPolls();
+  } catch (error) {
+    console.error("Error fetching polls from Firebase:", error);
+  }
+}
+async function savePollVoteToFirebase(updatedPoll) {
+  if (!window.firebaseDB || !currentUserId) {
+    console.log("Firebase DB or currentUserId missing for poll vote");
+    return;
+  }
+
+  try {
+    await firestoreSetDoc(
+      firestoreDoc(firebaseDB, "polls", updatedPoll.id),
+      {
+        id: updatedPoll.id,
+        question: updatedPoll.question,
+        options: updatedPoll.options,
+        votedUsers: updatedPoll.votedUsers,
+        status: "active",
+        updatedAt: new Date().toISOString()
+      }
+    );
+
+    console.log("Poll vote saved to Firebase");
+  } catch (error) {
+    console.error("Error saving poll vote:", error);
+    showToast("Error saving poll vote", "error");
+  }
+}
+async function closeCurrentPollInFirebase() {
+  if (!pollState.active || !window.firebaseDB) return;
+
+  const closedPoll = {
+    ...pollState.active,
+    status: "closed",
+    closedAt: new Date().toISOString()
+  };
+
+  try {
+    await firestoreSetDoc(
+      firestoreDoc(firebaseDB, "polls", closedPoll.id),
+      closedPoll
+    );
+
+    // remove the active poll document marker by clearing active state locally
+    pollState.previous.unshift(closedPoll);
+    pollState.active = null;
+
+    console.log("Poll closed in Firebase");
+    renderPolls();
+  } catch (error) {
+    console.error("Error closing poll:", error);
+    showToast("Error closing poll", "error");
+  }
+}
+
+async function closeCurrentPoll() {
+  await closeCurrentPollInFirebase();
+  await fetchPollsFromFirebase();
+}
+let currentUserId = null;
+
+// 1. New Google Sign-In Function
+async function handleGoogleSignIn() {
+  try {
+    if (!window.firebaseAuth || !window.googleProvider) {
+      alert("Firebase is still loading. Please try again in a second.");
+      return;
+    }
+
+    const result = await window.signInWithPopup(window.firebaseAuth, window.googleProvider);
+    const user = result.user;
+
+    // Create or grab user profile
+    let profile = JSON.parse(localStorage.getItem("messUserProfile")) || {};
+    profile.username = user.displayName || "VIT Student";
+    profile.email = user.email;
+    
+    localStorage.setItem("messUserProfile", JSON.stringify(profile));
+
+    // If they haven't picked a mess yet, show the dropdown
+    if (!profile.mess) {
+      document.getElementById("googleSignInBtn").style.display = "none";
+      document.getElementById("messSelectStep").style.display = "block";
+    } else {
+      // If they already have a mess, log them right in
+      document.getElementById("loginModal").classList.add("hidden");
+      // Call your existing functions to update the UI (ensure these match your actual function names)
+      if (typeof renderProfile === "function") renderProfile();
+      if (typeof updateMenu === "function") updateMenu();
+    }
+  } catch (error) {
+    console.error("Google Sign-In Error:", error);
+    alert("Sign-In failed: " + error.message);
+  }
+}
+
+// 2. Finish Setup Function (Called after picking a mess)
+function finishGoogleLoginSetup() {
+  const messSelect = document.getElementById("loginMessSelect");
+  const mess = messSelect.value;
+
+  if (!mess) {
+    alert("Please select your mess.");
+    return;
+  }
+
+  // Save the selected mess to local storage
+  let profile = JSON.parse(localStorage.getItem("messUserProfile")) || {};
+  profile.mess = mess;
+  localStorage.setItem("messUserProfile", JSON.stringify(profile));
+  
+  // Hide modal and update UI
+  document.getElementById("loginModal").classList.add("hidden");
+  if (typeof renderProfile === "function") renderProfile();
+  if (typeof updateMenu === "function") updateMenu();
+}
+
+// 3. Updated Auth Observer
+function waitForFirebaseAndInitAuth() {
+  if (!window.firebaseAuth || !window.onAuthStateChanged) {
+    setTimeout(waitForFirebaseAndInitAuth, 200);
+    return;
+  }
+
+  window.onAuthStateChanged(window.firebaseAuth, async (user) => {
+    // Check if the user is signed in AND is logged in via Google (not anonymous)
+    const isGoogleUser = user && !user.isAnonymous && user.providerData.some(p => p.providerId === 'google.com');
+
+    if (isGoogleUser) {
+      currentUserId = user.uid;
+      let profile = JSON.parse(localStorage.getItem("messUserProfile"));
+
+      // Check if they need to select a mess
+      if (!profile || !profile.mess) {
+        checkSoftLogin();
+      } else {
+        document.getElementById("loginModal")?.classList.add("hidden");
+      }
+
+      // Fetch Firestore data
+      if (typeof fetchRatingsFromFirebase === "function") await fetchRatingsFromFirebase();
+      if (typeof fetchReviewsFromFirebase === "function") await fetchReviewsFromFirebase();
+    } else {
+      // User is either logged out OR an old anonymous user -> Force Google Sign-In
+      currentUserId = null;
+      checkSoftLogin();
+    }
+  });
+}
+
+// 4. Updated Soft Login Checker
+function checkSoftLogin() {
+  const profile = JSON.parse(localStorage.getItem("messUserProfile"));
+  const modal = document.getElementById("loginModal");
+
+  if (!modal) return;
+
+  const user = window.firebaseAuth?.currentUser;
+  const isGoogleUser = user && !user.isAnonymous && user.providerData.some(p => p.providerId === 'google.com');
+
+  // If they aren't logged into Google OR haven't chosen a mess, show the popup!
+  if (!isGoogleUser || !profile || !profile.mess) {
+    modal.classList.remove("hidden");
+
+    if (isGoogleUser && profile && !profile.mess) {
+      // Logged into Google, but missing mess selection
+      document.getElementById("googleSignInBtn").style.display = "none";
+      document.getElementById("messSelectStep").style.display = "block";
+    } else {
+      // Not logged into Google
+      document.getElementById("googleSignInBtn").style.display = "flex";
+      document.getElementById("messSelectStep").style.display = "none";
+    }
+  } else {
+    modal.classList.add("hidden");
+  }
+}
+async function createNewPoll(q, options) {
+  await saveActivePollToFirebase(q, options);
+  await fetchPollsFromFirebase();
+}
+</script>
+<!-- Firebase SDK -->
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+  import { 
+    getAuth, 
+    onAuthStateChanged, 
+    GoogleAuthProvider, 
+    signInWithPopup, 
+    signOut 
+  } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-auth.js";
+  import { 
+    getFirestore, doc, setDoc, addDoc, deleteDoc, collection, getDocs, query, where, onSnapshot 
+  } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBeQZIxSXQSlO_eoXererWBSa8O2Iv1aUk",
+    authDomain: "vit-bhopal---mess-control.firebaseapp.com",
+    projectId: "vit-bhopal---mess-control",
+    storageBucket: "vit-bhopal---mess-control.appspot.com",
+    messagingSenderId: "850304039178",
+    appId: "1:850304039178:web:bdb7c6be1927afe69622f3",
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const googleProvider = new GoogleAuthProvider();
+
+  // Expose to global window scope so your main script can use them
+  window.firebaseApp = app;
+  window.firebaseAuth = auth;
+  window.firebaseDB = db;
+  window.googleProvider = googleProvider;
+  window.signInWithPopup = signInWithPopup;
+  window.signOut = signOut;
+  window.onAuthStateChanged = onAuthStateChanged;
+
+  window.firestoreDoc = doc;
+  window.firestoreSetDoc = setDoc;
+  window.firestoreCollection = collection;
+  window.firestoreGetDocs = getDocs;
+  window.firestoreQuery = query;
+  window.firestoreWhere = where;
+  window.firestoreOnSnapshot = onSnapshot;
+  window.firestoreAddDoc = addDoc;
+  window.firestoreDeleteDoc = deleteDoc;
+</script>
+
+
+<div id="loginModal" class="login-modal hidden">
+  <div class="login-box">
+    <div class="login-emoji">🍽️</div>
+    <h2>Welcome to Mess Mate</h2>
+    <p class="login-subtext">Sign in with Google to rate meals & share feedback.</p>
+
+    <!-- Google Sign In Button -->
+    <button id="googleSignInBtn" onclick="handleGoogleSignIn()" style="background: #4285F4; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%;">
+      <span>Sign in with Google</span>
+    </button>
+
+    <!-- Mess Selection Container (Hidden until they sign in) -->
+    <div id="messSelectStep" style="display: none;">
+      <p style="font-size: 13px; color: #5f7a84; margin-bottom: 8px;">Select your allotted mess to continue:</p>
+      <select id="loginMessSelect" style="width: 100%; padding: 8px; margin-bottom: 12px;">
+        <option value="">Select Your Mess</option>
+        <option value="Mayuri">Mayuri</option>
+        <option value="CRCL">CRCL</option>
+        <!-- Add other mess options here if needed -->
+      </select>
+      <button onclick="finishGoogleLoginSetup()" style="width: 100%; padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Continue</button>
+    </div>
+  </div>
+</div>
+<div id="toastContainer"></div>
+<div id="mealPopup" class="meal-popup hidden">
+  <div class="meal-popup-card">
+
+    <h2 id="popupMealTitle">Meal</h2>
+    <p id="popupMealTime" class="popup-time"></p>
+
+    <div class="popup-menu-box">
+      <p id="popupMealMenu">Loading...</p>
+    </div>
+
+    <button onclick="closeMealPopup()">Got it 👍</button>
+
+  </div>
+</div>
+</body>
+</html>
